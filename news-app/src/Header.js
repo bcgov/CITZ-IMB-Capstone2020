@@ -11,7 +11,7 @@ function Header() {
             </a>
           </div>
           <div id="header-bottom">
-              <h2>BC Gov News</h2>
+              <h2 id="bc-gov-news-text">BC Gov News</h2>
           </div>
       </div>
     );
