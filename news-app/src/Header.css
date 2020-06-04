@@ -1,0 +1,21 @@
+#header {
+    height: 15%;
+    background-color: #003366;
+}
+
+#bc-gov-logo {
+    height: 50px;
+    width: 150px;
+}
+
+#header-top {
+    padding-left: 10%;
+    border-bottom: 2px solid #F8B719;
+}
+/* #F8B719 is bc-gov yellow */
+
+#header-bottom {
+    padding-left: 10%;
+    color: white;
+    background-color: #003366;
+}
