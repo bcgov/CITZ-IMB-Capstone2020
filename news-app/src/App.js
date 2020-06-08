@@ -3,6 +3,7 @@ import Header from './Header.js';
 import Footer from './Footer.js';
 import Navbar from './Navbar.js';
 import FetchLatestNews from './FetchLatestNews.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 //import './App.css';
 
 function App() {
