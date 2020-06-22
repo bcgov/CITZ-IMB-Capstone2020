@@ -60,6 +60,7 @@
         Search
       </button>
       <p>Search category: releases, stories, factsheets, updates or default</p>
+	  <p>adding test api</p>
       <ul>
         {data.map(item =>  (
           <li key={item.atomId}>
