@@ -37,7 +37,7 @@ pipeline {
 		stage('Test API') {
 			steps{
 				script{
-					response=sh(returnStdout: true, script: "curl -o -i -L -s -w "%{http_code}" https://news.api.gov.bc.ca/api/Posts/Latest/home/default%20?api-version=1.0").trim()
+					response=$(curl -o -i -L -s -w "%{http_code}" https://news.api.gov.bc.ca/api/Posts/Latest/home/default%20?api-version=1.0)
 					echo response
 					if [ "$response" != "200" ]
 					then
