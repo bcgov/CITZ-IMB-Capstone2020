@@ -61,7 +61,7 @@
       </button>
       <p>Search category: releases, stories, factsheets, updates or default</p>
 		<p>test pipelibe.</p>
-		<p>test pipelibe v1.1</p>
+		<p>test pipelibe v1.2</p>
       <ul>
         {data.map(item =>  (
           <li key={item.atomId}>
