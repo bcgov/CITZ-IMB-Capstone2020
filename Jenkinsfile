@@ -35,6 +35,7 @@ pipeline {
         }
 		
 		stage('Test API') {
+			agent { label "build" } // Run on jenkins slave "build"
 			steps{
 				script{
 					def response=sh(returnStdout: true, script: 'curl -o -i -L -s -w "%{http_code}" https://news.api.gov.bc.ca/api/Posts/Latest/home/default%20?api-version=1.0').trim()
