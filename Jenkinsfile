@@ -43,7 +43,7 @@ pipeline {
 					if ( response != "200" )
 					then
 						echo "API not found"
-						exit 0
+						exit 1
 					fi
 				}
 			} 
