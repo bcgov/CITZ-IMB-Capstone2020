@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.css';
+import '../css/Header.css';
 
 function Header() {
     return (
@@ -7,7 +7,7 @@ function Header() {
       <div id="header">
           <div id="header-top">
             <a href="http://localhost:3000/">
-              <img id="bc-gov-logo" src={require("./includes/gov_bc_logo.svg")} alt="bc-gov-logo" title="B.C. News Site" />
+              <img id="bc-gov-logo" src={require("../includes/gov_bc_logo.svg")} alt="bc-gov-logo" title="B.C. News Site" />
             </a>
           </div>
           <div id="header-bottom">

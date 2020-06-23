@@ -1,5 +1,5 @@
 import React from 'react';
-import './Navbar.css';
+import '../css/Navbar.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -15,7 +15,7 @@ function Navbar() {
             <Col xs={3}><p class="panel">Sectors</p></Col>
             <Col xs={3}><p class="panel">Favorites</p></Col>
             <Col xs={2}>
-                <img id="settings-button" src={require("./includes/settings-button.svg")} alt="settings-button" title="settings button" />
+                <img id="settings-button" src={require("../includes/settings-button.svg")} alt="settings-button" title="settings button" />
             </Col>
           </Row>
       </Container>
