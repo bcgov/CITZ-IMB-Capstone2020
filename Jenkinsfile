@@ -39,7 +39,7 @@ pipeline {
 				script{
 					def response = sh(script: 'curl -o -i -L -s -w "%{http_code}" https://news.api.gov.bc.ca/api/Posts/Latest/home/default%20?api-version=1.0', returnStdout: true)
 					echo response
-					if [[$response -eq 200]]
+					if ($response -eq 200)
 					then
 						echo "API not found"
 						exit 0
