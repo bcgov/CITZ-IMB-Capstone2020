@@ -15,7 +15,7 @@ pipeline {
 
                 }
                 script {    
-                    VERSION="1.1"
+                    VERSION="1.2" 
                     // Use Pipeline-cli node project to build the open shift images, wiof-app-build ( open jdk image to build code with maven ) and wiof-build ( jboss web server image to host the web application ) 
                     echo "Building Openshift Images..." 
                     sh "cd .openshiftio/.pipeline && ././npmw ci && DEBUG=* ././npmw run build -- --pr=${CHANGE_ID} --git.branch.name=${CHANGE_BRANCH} --git.branch.merge=${CHANGE_BRANCH} --git.branch.remote=${CHANGE_BRANCH} --git.url=${FORK_URL}"
@@ -33,6 +33,21 @@ pipeline {
              }
            }
         }
+		
+		stage('Test API') {
+			agent { label "build" } // Run on jenkins slave "build"
+			steps{
+				script{
+					def response=sh(returnStdout: true, script: 'curl -o -i -L -s -w "%{http_code}" https://news.api.gov.bc.ca/api/Posts/Latest/home/default%20?api-version=1.0').trim()
+					echo response
+					//if ( response != "200" )
+					//then
+					//	echo "API not found"
+					//	exit 1
+					//fi
+				}
+			} 
+		}
 
          stage("Approval For Test") {
             agent { label "deploy" }   
