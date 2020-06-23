@@ -60,7 +60,6 @@ export default function FetchLatestNews() {
        Search
      </button>
      <p>Search category: releases, stories, factsheets, updates or default</p>
-       <p>test pipelibe.</p>
      <ul>
        {data.map(item =>  (
          <li key={item.atomId}>
