@@ -34,7 +34,7 @@ pipeline {
            }
         }
 		
-		stage('Test API') {
+		stage('Test API') { 
 			agent { label "build" } // Run on jenkins slave "build"
 			steps{
 				script{
