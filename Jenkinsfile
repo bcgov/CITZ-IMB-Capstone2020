@@ -46,7 +46,6 @@ pipeline {
 					}else{
 						echo "API is valid"
 					}
-					fi
 				}
 			} 
 		}
