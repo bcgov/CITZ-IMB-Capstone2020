@@ -15,7 +15,7 @@ pipeline {
 
                 }
                 script {    
-                    VERSION="1.2" 
+                    //VERSION="1.2" 
                     // Use Pipeline-cli node project to build the open shift images, wiof-app-build ( open jdk image to build code with maven ) and wiof-build ( jboss web server image to host the web application ) 
                     echo "Building Openshift Images..." 
                     sh "cd .openshiftio/.pipeline && ././npmw ci && DEBUG=* ././npmw run build -- --pr=${CHANGE_ID} --git.branch.name=${CHANGE_BRANCH} --git.branch.merge=${CHANGE_BRANCH} --git.branch.remote=${CHANGE_BRANCH} --git.url=${FORK_URL}"
