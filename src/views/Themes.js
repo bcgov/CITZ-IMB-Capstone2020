@@ -1,12 +1,12 @@
 /*
  * @Author: your name
  * @Date: 2020-07-07 15:13:42
- * @LastEditTime: 2020-07-07 15:43:30
+ * @LastEditTime: 2020-07-07 16:21:31
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020\src\views\Themes.js
  */ 
-
+//add .
 export const lightTheme = {
     body: '#FFFFFF',
     text: '#363537',

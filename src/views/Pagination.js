@@ -6,6 +6,7 @@
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020 - xordpe-dev\src\views\Pagination.js
  */ 
+//add .
 import React from "react";
 
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {

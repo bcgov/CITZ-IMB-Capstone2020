@@ -1,12 +1,13 @@
 /*
  * @Author: your name
  * @Date: 2020-07-07 15:14:33
- * @LastEditTime: 2020-07-07 15:16:02
+ * @LastEditTime: 2020-07-07 16:21:05
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020\src\views\GlobalStyles.js
  */ 
 
+ //add .
 import { createGlobalStyle} from "styled-components"
 export const GlobalStyles = createGlobalStyle`
   body {

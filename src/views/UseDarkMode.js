@@ -1,11 +1,12 @@
 /*
  * @Author: your name
  * @Date: 2020-07-07 15:29:49
- * @LastEditTime: 2020-07-07 15:38:13
+ * @LastEditTime: 2020-07-07 16:21:48
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020\src\views\UseDarkMode.js
  */ 
+//add .
 import { useEffect, useState } from 'react';
 
 export const UseDarkMode = () => {
