@@ -15,7 +15,6 @@ import Typography from '@material-ui/core/Typography';
 import AntSwitch from './AntSwitch.js';
 import Pagination from './Pagination.js';
 import Cookies from 'js-cookie';
-import '../css/FetchLatestNews.css';
 
 const FetchLatestNews = () => {
   var [data, setData] = useState([]);
