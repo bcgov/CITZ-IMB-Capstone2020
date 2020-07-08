@@ -12,34 +12,17 @@ import Footer from './Footer.js';
 import Navbar from './Navbar.js';
 import FetchLatestNews from './FetchLatestNews.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//Dark mode
-import {ThemeProvider} from "styled-components";
-import { GlobalStyles } from "./GlobalStyles.js";
-import { lightTheme, darkTheme } from "./Themes.js"
-import { UseDarkMode } from "./UseDarkMode.js"
-import Toggler from "./Toggler.js"
 
-function App() {
-  const [theme, themeToggler, mountedComponent] = UseDarkMode();
-  const themeMode = theme === 'light' ? lightTheme : darkTheme;
-
-  //The highlighted code is the only one added to UseDarkMode.js
-  if(!mountedComponent) return <div/>
-  
+function App() { 
   return (
-    <ThemeProvider theme={themeMode}>
-      <>
-      <GlobalStyles/>
       <div>
         <Header />
         <Navbar />
-        <Toggler theme={theme} toggleTheme={themeToggler} />
         <FetchLatestNews />
         <br/><br/>
         <Footer />
+    
       </div>
-      </>
-    </ThemeProvider>
   );
 }
 
