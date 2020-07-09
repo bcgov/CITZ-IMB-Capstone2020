@@ -11,13 +11,19 @@ import Header from './Header.js';
 import Footer from './Footer.js';
 import Navbar from './Navbar.js';
 import FetchLatestNews from './FetchLatestNews.js';
+import FavoriteNews from './FavoriteNews.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // add .Dark mode
 import {ThemeProvider} from "styled-components";
 import { GlobalStyles } from "./GlobalStyles.js";
-import { lightTheme, darkTheme } from "./Themes.js"
-import { UseDarkMode } from "./UseDarkMode.js"
-import Toggler from "./Toggler.js"
+import { lightTheme, darkTheme } from "./Themes.js";
+import { UseDarkMode } from "./UseDarkMode.js";
+import Toggler from "./Toggler.js";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 function App() {
   const [theme, themeToggler, mountedComponent] = UseDarkMode();
@@ -27,18 +33,32 @@ function App() {
   if(!mountedComponent) return <div/>
   
   return (
-    <ThemeProvider theme={themeMode}>
-      <>
-      <GlobalStyles/>
-      <div>
+<ThemeProvider theme={themeMode}>
+<>
+<GlobalStyles/>
+    <Router>
+
         <Header />
         <Navbar />
         <Toggler theme={theme} toggleTheme={themeToggler} />
-        <FetchLatestNews />
+
+        <Switch>
+
+          <Route path="/favorites">
+            <FavoriteNews />
+          </Route>
+
+          <Route path="/">
+            <FetchLatestNews />
+          </Route>
+
+        </Switch>
+
         <br/><br/>
         <Footer />
-      </div>
-      </>
+      
+    </Router>
+    </>
     </ThemeProvider>
   );
 }
