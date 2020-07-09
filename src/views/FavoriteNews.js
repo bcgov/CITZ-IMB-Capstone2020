@@ -9,6 +9,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Cookies from 'js-cookie';
 // import { withStyles } from '@material-ui/core/styles';
 // import FormGroup from '@material-ui/core/FormGroup';
 // import Switch from '@material-ui/core/Switch';
@@ -25,7 +26,9 @@ const [key, setKey] = useState(cookieStore[index]);
 
 const [url, setUrl] = useState(`https://news.api.gov.bc.ca/api/Posts/${key}?api-version=1.0`);
 
- var [data, setData] = useState([]);
+const [data, setData] = useState([]);
+const [cookie, setCookie] = useState(``);
+
 //  const [showText, setShowText] = useState(false);
 //  const [state, setState] = React.useState({
 //    checkedC: false,
@@ -47,6 +50,7 @@ const [url, setUrl] = useState(`https://news.api.gov.bc.ca/api/Posts/${key}?api-
    fetchData();
  }, [url]);
 
+ 
  useEffect(() => {
   const updateIndex = async () => {
     setKey(cookieStore[index]);
@@ -56,6 +60,17 @@ const [url, setUrl] = useState(`https://news.api.gov.bc.ca/api/Posts/${key}?api-
 
   updateIndex();
 }, [index, cookieStore, key  ]);
+
+
+
+useEffect(() => {
+  const removeCookie = async () => {
+    Cookies.remove(cookie);
+  };
+
+  removeCookie();
+  setCookieStore(stringToArray(listCookies()));
+}, [cookie]);
 
 // Turning cookies into a string of key values separated by spaces and new lines
  function listCookies() {
@@ -85,12 +100,30 @@ const [url, setUrl] = useState(`https://news.api.gov.bc.ca/api/Posts/${key}?api-
         return cookieArray;
     }
 
+    console.log(data.length);
+    console.log(typeof data);
+    console.log(data);
 
+if (data.length === 0) {
+  return (
+    <p>Loading...</p>
+  );
+}
+else {
  return (
    <div class="container mt-5">
      <br/>
-     
-     <p>{data.key}</p>
+
+     <ul>
+       <li>
+
+        {data.documents.map(document => <h4 key={document.key}> {document.headline}
+        <input type="image" src={require("../includes/security-pin.svg")} alt="pin" height="20" width="20" onClick={ () => setCookie(`${data.key}`)} />
+        </h4>)}
+       </li>
+    </ul>
+
+
 
      {/* <ul> {data.documents.map(document => <h4 key={document.key}> {document.headline} </h4>)}
        {data.map(item =>  (
@@ -123,7 +156,7 @@ const [url, setUrl] = useState(`https://news.api.gov.bc.ca/api/Posts/${key}?api-
      </ul> */}
      
      <button type="button" onClick={ () => setIndex((index+1) % cookieStore.length)}> Next Story </button>
-     
    </div>
  );
+    }
 }
