@@ -10,7 +10,8 @@ import React from 'react';
 import Header from './Header.js';
 import Footer from './Footer.js';
 import Navbar from './Navbar.js';
-import FetchLatestNews from './FetchLatestNews.js';
+//import FetchLatestNews from './FetchLatestNews.js';
+import FavoriteNews from './FavoriteNews.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
     <div>
       <Header />
       <Navbar />
-      <FetchLatestNews />
+      <FavoriteNews />
       <br/><br/>
       <Footer />
      

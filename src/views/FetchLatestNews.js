@@ -50,7 +50,7 @@ const FetchLatestNews = () => {
   // adding the Key of a news article to the list of cookies
   useEffect(() => {
     const storeCookie = async () => {
-      Cookies.set(cookie, cookie);
+      Cookies.set(cookie, cookie, { expires: 100});
     };
 
     storeCookie();
