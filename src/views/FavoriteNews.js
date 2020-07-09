@@ -4,19 +4,20 @@
  * @LastEditTime: 2020-06-14 20:06:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \OPReactViaGit\src\FetchLatestNews.js
+ * @FilePath: \OPReactViaGit\src\FavoriteNews.js
  */ 
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { withStyles } from '@material-ui/core/styles';
-import FormGroup from '@material-ui/core/FormGroup';
-import Switch from '@material-ui/core/Switch';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import AntSwitch from './AntSwitch.js';
+// import { withStyles } from '@material-ui/core/styles';
+// import FormGroup from '@material-ui/core/FormGroup';
+// import Switch from '@material-ui/core/Switch';
+// import Grid from '@material-ui/core/Grid';
+// import Typography from '@material-ui/core/Typography';
+// import AntSwitch from './AntSwitch.js';
+ 
 
-export default function FetchLatestNews2() {
+export default function FetchLatestNews() {
 
 const [cookieStore, setCookieStore] = useState(stringToArray(listCookies()));
 const [index, setIndex] = useState(0);
@@ -25,14 +26,14 @@ const [key, setKey] = useState(cookieStore[index]);
 const [url, setUrl] = useState(`https://news.api.gov.bc.ca/api/Posts/${key}?api-version=1.0`);
 
  var [data, setData] = useState([]);
- const [showText, setShowText] = useState(false);
- const [state, setState] = React.useState({
-   checkedC: false,
- });
- const handleChange = (event) => {
-   setState({ ...state, [event.target.name]: event.target.checked });
-   setShowText(!showText)
- };
+//  const [showText, setShowText] = useState(false);
+//  const [state, setState] = React.useState({
+//    checkedC: false,
+//  });
+//  const handleChange = (event) => {
+//    setState({ ...state, [event.target.name]: event.target.checked });
+//    setShowText(!showText)
+//  };
 
 
  //??G
@@ -45,6 +46,16 @@ const [url, setUrl] = useState(`https://news.api.gov.bc.ca/api/Posts/${key}?api-
 
    fetchData();
  }, [url]);
+
+ useEffect(() => {
+  const updateIndex = async () => {
+    setKey(cookieStore[index]);
+    setUrl(`https://news.api.gov.bc.ca/api/Posts/${key}?api-version=1.0`); 
+
+  };
+
+  updateIndex();
+}, [index, cookieStore, key  ]);
 
 // Turning cookies into a string of key values separated by spaces and new lines
  function listCookies() {
@@ -73,6 +84,7 @@ const [url, setUrl] = useState(`https://news.api.gov.bc.ca/api/Posts/${key}?api-
 
         return cookieArray;
     }
+
 
  return (
    <div class="container mt-5">
@@ -110,21 +122,8 @@ const [url, setUrl] = useState(`https://news.api.gov.bc.ca/api/Posts/${key}?api-
        ))}
      </ul> */}
      
-     <button
-         type="button"
-         onClick={() => {
-           setIndex((index+1) % cookieStore.length);
-           setKey(cookieStore[index]);
-           setUrl(`https://news.api.gov.bc.ca/api/Posts/${key}?api-version=1.0`); 
-          //console.log(index);
-          //console.log(cookieStore[index]);
-            //console.log(url);
-
-         }
-         }
-       >
-         Next Story
-     </button>
+     <button type="button" onClick={ () => setIndex((index+1) % cookieStore.length)}> Next Story </button>
+     
    </div>
  );
 }
