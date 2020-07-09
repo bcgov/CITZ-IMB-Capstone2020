@@ -86,7 +86,7 @@ useEffect(() => {
 // If there are no tagged stories
 if (data.length === 0) {
   return (
-    <div class="container mt-5">
+    <div className="container mt-5">
       <h1>You have no tagged stories!</h1>
     </div>
   );
@@ -94,25 +94,23 @@ if (data.length === 0) {
 // If user has tagged stories
 else {
  return (
-   <div class="container mt-5">
+   <div className="container mt-5">
+
+     <h1 style={{textAlign: 'center'}}>Favorite News</h1>
      <br/>
 
-     <ul>
-       <li>
-
-        {data.documents.map(document => <h4 key={document.key}> {document.headline} &ensp;
-        <input type="image" src={require("../includes/security-pin.svg")} alt="pin" height="20" width="20" onClick={ () => setCookie(`${data.key}`)} />
+        {data.documents.map((document, index) => <h4 key={index}> {document.headline} &ensp;
+        <input type="image" src={require("../includes/garbage-can-delete.svg")} alt="pin" height="30" width="30" onClick={ () => setCookie(`${data.key}`)} />
         </h4>)}
         
-        {data.documents.map(documents => <p key = {documents.languageId}>{documents.detailsHtml = documents.detailsHtml.replace(/(<([^>]+)>)/ig, '')
+        {data.documents.map((document, index) => <p key = {index}>{document.detailsHtml = document.detailsHtml.replace(/(<([^>]+)>)/ig, '')
                                                                                                                                             .replace(/&rsquo;/ig, '\'')
                                                                                                                                             .replace(/(&ldquo;)|(&rdquo;)/g, '"')
                                                                                                                                             .replace(/&ndash;/ig, ' - ')
                                                                                                                                             .replace(/&lsquo;/, '\'')
                                                                                                                                             .replace(/&nbsp;/ig, ' ')
                                                                                                                                             }</p>)}
-       </li>
-    </ul>
+
      
      <button type="button" onClick={ () => setIndex((index+1) % cookieStore.length)}> Next Story </button>
    </div>

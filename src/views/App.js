@@ -10,20 +10,38 @@ import React from 'react';
 import Header from './Header.js';
 import Footer from './Footer.js';
 import Navbar from './Navbar.js';
-//import FetchLatestNews from './FetchLatestNews.js';
+import FetchLatestNews from './FetchLatestNews.js';
 import FavoriteNews from './FavoriteNews.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Navbar />
-      <FavoriteNews />
-      <br/><br/>
-      <Footer />
-     
-    </div>
+    <Router>
+
+        <Header />
+        <Navbar />
+
+        <Switch>
+
+          <Route path="/favorites">
+            <FavoriteNews />
+          </Route>
+
+          <Route path="/">
+            <FetchLatestNews />
+          </Route>
+
+        </Switch>
+
+        <br/><br/>
+        <Footer />
+      
+    </Router>
   );
 }
 

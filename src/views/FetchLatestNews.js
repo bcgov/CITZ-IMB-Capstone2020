@@ -98,14 +98,14 @@ const FetchLatestNews = () => {
      <ul>
        {currentPosts.map(item =>  (
          <li key={item.atomId}>
-           {item.documents.map(documents => <h4 key = {documents.languageId}>{documents.headline} 
+           {item.documents.map((documents, index) => <h4 key = {index}>{documents.headline} 
             <input type="image" src={require("../includes/security-pin.svg")} alt="pin" height="20" width="20" onClick={ () => setCookie(`${item.key}`)} />
            </h4>)}
            <b> news type:</b>  {item.kind} <br/>
            <b> news key:</b>  {item.key} <br/>
            
            {/*//reverse ASCII code from api ..*/} 
-           {showText && item.documents.map(documents => <p key = {documents.languageId}>{documents.detailsHtml = documents.detailsHtml.replace(/(<([^>]+)>)/ig, '')
+           {showText && item.documents.map((documents, index) => <p key = {index}>{documents.detailsHtml = documents.detailsHtml.replace(/(<([^>]+)>)/ig, '')
                                                                                                                                             .replace(/&rsquo;/ig, '\'')
                                                                                                                                             .replace(/(&ldquo;)|(&rdquo;)/g, '"')
                                                                                                                                             .replace(/&ndash;/ig, ' - ')
