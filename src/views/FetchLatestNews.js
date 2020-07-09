@@ -14,6 +14,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import AntSwitch from './AntSwitch.js';
 import Pagination from './Pagination.js';
+import Cookies from 'js-cookie';
 
 const FetchLatestNews = () => {
   var [data, setData] = useState([]);
@@ -26,6 +27,8 @@ const FetchLatestNews = () => {
   const [postsPerPage] = useState(5);
   const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
   const [url, setUrl] = useState(API_KEY);
+  const [cookie, setCookie] = useState(``);
+
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
@@ -43,6 +46,15 @@ const FetchLatestNews = () => {
 
     fetchPosts();
   }, [url]);
+
+  // adding the Key of a news article to the list of cookies
+  useEffect(() => {
+    const storeCookie = async () => {
+      Cookies.set(cookie, cookie, { expires: 100});
+    };
+
+    storeCookie();
+  }, [cookie]);
 
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
@@ -86,12 +98,14 @@ const FetchLatestNews = () => {
      <ul>
        {currentPosts.map(item =>  (
          <li key={item.atomId}>
-           {item.documents.map(documents => <h4 key = {documents.languageId}>{documents.headline} </h4>)}
+           {item.documents.map((documents, index) => <h4 key = {index}>{documents.headline} 
+            <input type="image" src={require("../includes/security-pin.svg")} alt="pin" height="20" width="20" onClick={ () => setCookie(`${item.key}`)} />
+           </h4>)}
            <b> news type:</b>  {item.kind} <br/>
            <b> news key:</b>  {item.key} <br/>
            
            {/*//reverse ASCII code from api ..*/} 
-           {showText && item.documents.map(documents => <p key = {documents.languageId}>{documents.detailsHtml = documents.detailsHtml.replace(/(<([^>]+)>)/ig, '')
+           {showText && item.documents.map((documents, index) => <p key = {index}>{documents.detailsHtml = documents.detailsHtml.replace(/(<([^>]+)>)/ig, '')
                                                                                                                                             .replace(/&rsquo;/ig, '\'')
                                                                                                                                             .replace(/(&ldquo;)|(&rdquo;)/g, '"')
                                                                                                                                             .replace(/&ndash;/ig, ' - ')
@@ -109,6 +123,8 @@ const FetchLatestNews = () => {
         paginate={paginate}
       />
     </div>
+
+
   );
 };
 
