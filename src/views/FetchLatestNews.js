@@ -1,7 +1,7 @@
 /*
  * @Author: Murphy316
  * @Date: 2020-06-09 10:15:15
- * @LastEditTime: 2020-06-30 14:04:07
+ * @LastEditTime: 2020-07-14 12:47:44
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \OPReactViaGit\src\FetchLatestNews.js  
@@ -29,7 +29,7 @@ const FetchLatestNews = () => {
   const [url, setUrl] = useState(API_KEY);
   const [cookie, setCookie] = useState(``);
 
-
+  //for switch button
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
     setShowText(!showText)
