@@ -8,7 +8,8 @@ import {
   Link
  } from "react-router-dom";
 
-function Header() {
+function Header({updateFavorites}) {
+
   
   function deleteAllCookies() {
     var cookies = document.cookie.split(";");
@@ -19,6 +20,7 @@ function Header() {
         var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
+    updateFavorites();
 }
 
     return (

@@ -12,7 +12,7 @@ import axios from "axios";
 import Cookies from 'js-cookie';
 import PaginationFav from './PaginationFav.js';
 
-const FavoriteNews = () => {
+const FavoriteNews = (deleted) => {
   const [cookieStore, setCookieStore] = useState(stringToArray(listCookies()));
   // eslint-disable-next-line
   const [index, setIndex] = useState(0);
@@ -72,7 +72,7 @@ const FavoriteNews = () => {
 
     removeCookie();
     setCookieStore(stringToArray(listCookies()));
-  }, [cookie]);
+  }, [cookie, deleted]);
 
   // Turning cookies into a string of key values separated by spaces and new lines
   function listCookies() {

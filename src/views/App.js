@@ -6,7 +6,7 @@
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020 - xordpe-dev\src\views\App.js
  */ 
-import React from 'react';
+import React, {useState} from 'react';
 import Header from './Header.js';
 import Footer from './Footer.js';
 //import Navbar from './Navbar.js';
@@ -28,6 +28,11 @@ import {
 function App() {
   const [theme, themeToggler, mountedComponent] = UseDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
+  const [deleted, setDeleted] = useState(false);
+
+  const updateFavorites = () => {
+    setDeleted(!deleted);
+  }
 
   //The highlighted code is the only one added to UseDarkMode.js
   if(!mountedComponent) return <div/>
@@ -38,14 +43,14 @@ function App() {
 <GlobalStyles/>
     <Router>
 
-        <Header />
+        <Header updateFavorites={updateFavorites}/>
         {/* <Navbar /> */}
         <Toggler theme={theme} toggleTheme={themeToggler} />
 
         <Switch>
 
           <Route path="/favorites">
-            <FavoriteNews />
+            <FavoriteNews deleted={deleted}/>
           </Route>
 
           <Route path="/">
