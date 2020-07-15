@@ -8,7 +8,7 @@ import {
   Link
  } from "react-router-dom";
 
-function Header({updateFavorites}) {
+function Header({updateFavorites, onDarkMode, theme}) {
 
   
   function deleteAllCookies() {
@@ -21,7 +21,7 @@ function Header({updateFavorites}) {
         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
     updateFavorites();
-}
+  }
 
     return (
       // Contents of the header
@@ -42,7 +42,7 @@ function Header({updateFavorites}) {
                 <Dropdown.Item onClick={ () => deleteAllCookies()}>Delete Cookies</Dropdown.Item>
                 <Dropdown.Item href="favorites">Show Favorites</Dropdown.Item>
                 <Dropdown.Item href="#/action-3">Show Text</Dropdown.Item>
-                <Dropdown.Item href="#/action-4">Night Mode</Dropdown.Item>
+                <Dropdown.Item onClick={ () => onDarkMode()}>{`${theme}`} Mode</Dropdown.Item>
                 <Dropdown.Divider />
                 <Dropdown.Item href="#/action-5">Updates</Dropdown.Item>
                 <Dropdown.Item href="#/action-6">About</Dropdown.Item>
