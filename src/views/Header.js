@@ -9,6 +9,18 @@ import {
  } from "react-router-dom";
 
 function Header() {
+  
+  function deleteAllCookies() {
+    var cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+}
+
     return (
       // Contents of the header
       <Container fluid id="header">
@@ -25,10 +37,11 @@ function Header() {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Delete Cookies</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Show Favorites</Dropdown.Item>
+                <Dropdown.Item onClick={ () => deleteAllCookies()}>Delete Cookies</Dropdown.Item>
+                <Dropdown.Item href="favorites">Show Favorites</Dropdown.Item>
                 <Dropdown.Item href="#/action-3">Show Text</Dropdown.Item>
                 <Dropdown.Item href="#/action-4">Night Mode</Dropdown.Item>
+                <Dropdown.Divider />
                 <Dropdown.Item href="#/action-5">Updates</Dropdown.Item>
                 <Dropdown.Item href="#/action-6">About</Dropdown.Item>
               </Dropdown.Menu>
