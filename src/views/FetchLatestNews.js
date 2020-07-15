@@ -98,11 +98,9 @@ const FetchLatestNews = () => {
      <ul>
        {currentPosts.map(item =>  (
          <li key={item.atomId}>
-           {item.documents.map((documents, index) => <h4 key = {index}>{documents.headline} 
-            <input type="image" src={require("../includes/security-pin.svg")} alt="pin" height="20" width="20" onClick={ () => setCookie(`${item.key}`)} />
-           </h4>)}
-           <b> news type:</b>  {item.kind} <br/>
-           <b> news key:</b>  {item.key} <br/>
+           {item.documents.map((documents, index) => <h4 key = {index}>{documents.headline} </h4>)}
+           <b> News Type:</b>  {item.kind} <br/>
+           <b> News Key:</b>  {item.key} <input type="image" src={require("../includes/security-pin.svg")} alt="pin" height="20" width="20" onClick={ () => setCookie(`${item.key}`)} /><br/>
            
            {/*//reverse ASCII code from api ..*/} 
            {showText && item.documents.map((documents, index) => <p key = {index}>{documents.detailsHtml = documents.detailsHtml.replace(/(<([^>]+)>)/ig, '')
