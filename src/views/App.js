@@ -24,6 +24,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import CookieConsent from "react-cookie-consent";
 
 function App() {
   const [theme, themeToggler, mountedComponent] = UseDarkMode();
@@ -38,6 +39,7 @@ function App() {
   if(!mountedComponent) return <div/>
   
   return (
+    <div>
 <ThemeProvider theme={themeMode}>
 <>
 <GlobalStyles/>
@@ -65,6 +67,25 @@ function App() {
     </Router>
     </>
     </ThemeProvider>
+
+    <CookieConsent
+          onAccept={() => {
+            alert("accepted!");
+          }}
+          debug={true}
+          enableDeclineButton
+          declineButtonText="Decline (optional)"
+          onDecline={() => {
+            alert("Please enable cookies for better user experience");
+          }}
+        >
+          This website uses cookies to enhance the user experience.{" "}
+          <span style={{ fontSize: "10px" }}>
+            This bit of text is smaller :O
+          </span>
+        </CookieConsent>
+
+    </div>
   );
 }
 
