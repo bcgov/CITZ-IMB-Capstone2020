@@ -9,18 +9,18 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import FormGroup from '@material-ui/core/FormGroup';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import AntSwitch from './AntSwitch.js';
+// import FormGroup from '@material-ui/core/FormGroup';
+// import Grid from '@material-ui/core/Grid';
+// import Typography from '@material-ui/core/Typography';
+// import AntSwitch from './AntSwitch.js';
 import Pagination from './Pagination.js';
 import Cookies from 'js-cookie';
 
-const FetchLatestNews = () => {
+const FetchLatestNews = ({showText, newsType}) => {
   var [data, setData] = useState([]);
-  const [query, setQuery] = useState("releases");
-  const [showText, setShowText] = useState(false);
-  const [state, setState] = React.useState({checkedC: false,});
+  //const [query, setQuery] = useState(newsType);
+  //const [showText, setShowText] = useState(false);
+  //const [state, setState] = React.useState({checkedC: false,});
   // eslint-disable-next-line
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -28,12 +28,13 @@ const FetchLatestNews = () => {
   const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
   const [url, setUrl] = useState(API_KEY);
   const [cookie, setCookie] = useState(``);
-
+  console.log(newsType);
+console.log(url);
   //for switch button
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-    setShowText(!showText)
-  };
+  // const handleChange = (event) => {
+  //   setState({ ...state, [event.target.name]: event.target.checked });
+  //   setShowText(!showText)
+  // };
 
   //??G
   useEffect(() => {
@@ -44,8 +45,9 @@ const FetchLatestNews = () => {
       setLoading(false);
     };
 
+    setUrl(`https://news.api.gov.bc.ca/api/Posts/Latest/home/default?postKind=${newsType}&count=50&skip=0&api-version=1.0`)
     fetchPosts();
-  }, [url]);
+  }, [url,newsType]);
 
   // adding the Key of a news article to the list of cookies
   useEffect(() => {
@@ -67,22 +69,7 @@ const FetchLatestNews = () => {
   return (
     <div className='container mt-5'>
       <React.Fragment>
-     <input
-       type="text"
-       value={query}
-       onChange={event => setQuery(event.target.value)}
-     />
-     <button
-       type="button"
-       onClick={() =>
-         setUrl(`https://news.api.gov.bc.ca/api/Posts/Latest/home/default?postKind=${query}&count=50&skip=0&api-version=1.0`)
-       }
-     >
-       Search
-     </button>
-     <p>Search category: releases, stories, factsheets, updates or default</p>
-
-     <FormGroup>
+     {/* <FormGroup>
              <Typography component="div">
                <Grid component="label" container alignItems="center" spacing={1}>
                  <Grid item>content display options: </Grid>
@@ -93,7 +80,8 @@ const FetchLatestNews = () => {
                  <Grid item>Show</Grid>
                </Grid>
              </Typography>
-     </FormGroup>
+     </FormGroup> */}
+     <h1 style={{textAlign: 'center'}}>Welcome to the BC Gov News Home Page</h1>
 
      <ul>
        {currentPosts.map(item =>  (
