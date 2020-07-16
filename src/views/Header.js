@@ -27,17 +27,18 @@ function Header({updateFavorites, onDarkMode, theme, textSwitch}) {
       // Contents of the header
       <Container fluid id="header">
         <Row id="header-top">
-          <Col xs={8} sm={4} md={3} lg={2}>
+          
           <Link to="/">
             <img id="bc-gov-logo" src={require("../includes/gov_bc_logo.svg")} alt="bc-gov-logo" title="B.C. News Site" />
-            </Link>
-          </Col>
+          </Link>
+          &emsp;
+          <div id="separator"></div>
+          &emsp;
 
-          <Col xs={{order: "last"}} sm={4}>
             <h3 id="bc-gov-news-text">BC Gov News</h3>
-          </Col>
 
-          <Col xs={4} sm={{order: "last"}}>
+          <Col></Col>
+          <Col xs={4} sm={2}>
             <Dropdown>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
                 <img id="settings-button" src={require("../includes/settings-button-white.svg")} alt="settings-button" title="settings button" height="40" width="40" />

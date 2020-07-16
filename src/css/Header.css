@@ -32,3 +32,16 @@
     border-color: #003366;
     box-shadow: 0 0 0 0rem;
 }
+
+#separator {
+    width: 1px;
+    height: 40px;
+    vertical-align: top;
+    background-color: #F8B719;
+    margin-top: 5px;
+}
+
+#settings-col {
+    text-align: right;
+    float: right;
+}
