@@ -27,6 +27,32 @@
     color:white;
 }
 
+.bc-gov-news-filter {
+    color: white;
+    margin-top: 15px;
+    display: inline-block;
+    justify-content: flex-end;
+}
+.bc-gov-news-filter-text {
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+}
+.bc-gov-news-filter-text2 {
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.news-filter-divider {
+    width: 1px;
+    height: 20px;
+    vertical-align: top;
+    background-color: white;
+    margin-top: 3px;
+    display: inline-block;
+}
+
 #dropdown-basic {
     background-color: #003366;
     border-color: #003366;

@@ -16,9 +16,9 @@ import axios from "axios";
 import Pagination from './Pagination.js';
 import Cookies from 'js-cookie';
 
-const FetchLatestNews = ({showText}) => {
+const FetchLatestNews = ({showText, newsType}) => {
   var [data, setData] = useState([]);
-  const [query, setQuery] = useState("releases");
+  //const [query, setQuery] = useState(newsType);
   //const [showText, setShowText] = useState(false);
   //const [state, setState] = React.useState({checkedC: false,});
   // eslint-disable-next-line
@@ -28,7 +28,8 @@ const FetchLatestNews = ({showText}) => {
   const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
   const [url, setUrl] = useState(API_KEY);
   const [cookie, setCookie] = useState(``);
-
+  console.log(newsType);
+console.log(url);
   //for switch button
   // const handleChange = (event) => {
   //   setState({ ...state, [event.target.name]: event.target.checked });
@@ -44,8 +45,9 @@ const FetchLatestNews = ({showText}) => {
       setLoading(false);
     };
 
+    setUrl(`https://news.api.gov.bc.ca/api/Posts/Latest/home/default?postKind=${newsType}&count=50&skip=0&api-version=1.0`)
     fetchPosts();
-  }, [url]);
+  }, [url,newsType]);
 
   // adding the Key of a news article to the list of cookies
   useEffect(() => {
@@ -67,21 +69,6 @@ const FetchLatestNews = ({showText}) => {
   return (
     <div className='container mt-5'>
       <React.Fragment>
-     <input
-       type="text"
-       value={query}
-       onChange={event => setQuery(event.target.value)}
-     />
-     <button
-       type="button"
-       onClick={() =>
-         setUrl(`https://news.api.gov.bc.ca/api/Posts/Latest/home/default?postKind=${query}&count=50&skip=0&api-version=1.0`)
-       }
-     >
-       Search
-     </button>
-     <p>Search category: releases, stories, factsheets, updates or default</p>
-
      {/* <FormGroup>
              <Typography component="div">
                <Grid component="label" container alignItems="center" spacing={1}>
@@ -94,6 +81,7 @@ const FetchLatestNews = ({showText}) => {
                </Grid>
              </Typography>
      </FormGroup> */}
+     <h1 style={{textAlign: 'center'}}>Welcome to the BC Gov News Home Page</h1>
 
      <ul>
        {currentPosts.map(item =>  (

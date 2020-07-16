@@ -8,7 +8,7 @@ import {
   Link
  } from "react-router-dom";
 
-function Header({updateFavorites, onDarkMode, theme, textSwitch}) {
+function Header({updateFavorites, updateNewsType, onDarkMode, theme, textSwitch}) {
 
   
   function deleteAllCookies() {
@@ -23,6 +23,10 @@ function Header({updateFavorites, onDarkMode, theme, textSwitch}) {
     updateFavorites();
   }
 
+  function filterNews(type) {
+    updateNewsType(type);
+  }
+
     return (
       // Contents of the header
       <Container fluid id="header">
@@ -35,9 +39,22 @@ function Header({updateFavorites, onDarkMode, theme, textSwitch}) {
           <div id="separator"></div>
           &emsp;
 
-            <h3 id="bc-gov-news-text">BC Gov News</h3>
+            <h3 id="bc-gov-news-text">BC Gov News</h3>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
-          <Col></Col>
+            <div className="bc-gov-news-filter">
+              <p className="bc-gov-news-filter-text2">Filter by :</p>&ensp;
+              <div className="news-filter-divider"></div>&ensp;
+              <p className="bc-gov-news-filter-text" onClick={() => {filterNews("default")}}> Default</p>&ensp;
+              <div className="news-filter-divider"></div>&ensp;
+              <p className="bc-gov-news-filter-text" onClick={() => {filterNews("releases")}}> Releases</p>&ensp;
+              <div className="news-filter-divider"></div>&ensp;
+              <p className="bc-gov-news-filter-text" onClick={() => {filterNews("stories")}}> Stories</p>&ensp;
+              <div className="news-filter-divider"></div>&ensp;
+              <p className="bc-gov-news-filter-text" onClick={() => {filterNews("factsheets")}}> Factsheets</p>&ensp;
+              <div className="news-filter-divider"></div>&ensp;
+              <p className="bc-gov-news-filter-text" onClick={() => {filterNews("updates")}}> Updates</p>
+            </div>
+            <Col></Col>
           <Col xs={4} sm={2}>
             <Dropdown>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -45,8 +62,8 @@ function Header({updateFavorites, onDarkMode, theme, textSwitch}) {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item href="/">Home</Dropdown.Item>
-                <Dropdown.Item href="favorites">Show Favorites</Dropdown.Item>
+                <Dropdown.Item><Link to="/">Home</Link></Dropdown.Item>
+                <Dropdown.Item><Link to="/favorites">Favorites</Link></Dropdown.Item>
                 <Dropdown.Item onClick={ () => textSwitch()}>Show Text</Dropdown.Item>
                 <Dropdown.Item onClick={ () => onDarkMode()}>{`${theme}`} Mode</Dropdown.Item>
                 <Dropdown.Item onClick={ () => deleteAllCookies()}>Delete Cookies</Dropdown.Item>
