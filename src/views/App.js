@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-23 14:59:48
- * @LastEditTime: 2020-07-15 16:38:14
+ * @LastEditTime: 2020-07-16 10:56:31
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020 - xordpe-dev\src\views\App.js
@@ -78,16 +78,9 @@ function App() {
             alert("accepted!");
           }}
           //debug={true}
-          enableDeclineButton
-          declineButtonText="Decline (optional)"
-          onDecline={() => {
-            alert("Please enable cookies for better user experience");
-          }}
         >
           This website uses cookies to enhance the user experience.{" "}
-          <span style={{ fontSize: "10px" }}>
-            This bit of text is smaller :O
-          </span>
+
         </CookieConsent>
 
     </div>
