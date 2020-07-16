@@ -31,9 +31,14 @@ function App() {
 
   const themeMode = theme === 'Dark' ? lightTheme : darkTheme;
   const [deleted, setDeleted] = useState(false);
+  const [showText, setShowText] = useState(false);
 
   const updateFavorites = () => {
     setDeleted(!deleted);
+  }
+
+  const textSwitch = () => {
+    setShowText(!showText);
   }
 
   //The highlighted code is the only one added to UseDarkMode.js
@@ -51,17 +56,17 @@ function App() {
 <GlobalStyles/>
     <Router>
 
-        <Header updateFavorites={updateFavorites} onDarkMode={handleDarkMode} theme={theme} />
+        <Header updateFavorites={updateFavorites} onDarkMode={handleDarkMode} theme={theme} textSwitch={textSwitch}/>
         {/* <Navbar /> */}
 
         <Switch>
 
           <Route path="/favorites">
-            <FavoriteNews deleted={deleted}/>
+            <FavoriteNews deleted={deleted} showText={showText}/>
           </Route>
 
           <Route path="/">
-            <FetchLatestNews />
+            <FetchLatestNews showText={showText}/>
           </Route>
 
         </Switch>

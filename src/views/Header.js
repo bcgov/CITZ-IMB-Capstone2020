@@ -8,7 +8,7 @@ import {
   Link
  } from "react-router-dom";
 
-function Header({updateFavorites, onDarkMode, theme}) {
+function Header({updateFavorites, onDarkMode, theme, textSwitch}) {
 
   
   function deleteAllCookies() {
@@ -41,7 +41,7 @@ function Header({updateFavorites, onDarkMode, theme}) {
               <Dropdown.Menu>
                 <Dropdown.Item onClick={ () => deleteAllCookies()}>Delete Cookies</Dropdown.Item>
                 <Dropdown.Item href="favorites">Show Favorites</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Show Text</Dropdown.Item>
+                <Dropdown.Item onClick={ () => textSwitch()}>Show Text</Dropdown.Item>
                 <Dropdown.Item onClick={ () => onDarkMode()}>{`${theme}`} Mode</Dropdown.Item>
                 <Dropdown.Divider />
                 <Dropdown.Item href="#/action-5">Updates</Dropdown.Item>

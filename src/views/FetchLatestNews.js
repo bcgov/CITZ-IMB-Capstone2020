@@ -9,18 +9,18 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import FormGroup from '@material-ui/core/FormGroup';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import AntSwitch from './AntSwitch.js';
+// import FormGroup from '@material-ui/core/FormGroup';
+// import Grid from '@material-ui/core/Grid';
+// import Typography from '@material-ui/core/Typography';
+// import AntSwitch from './AntSwitch.js';
 import Pagination from './Pagination.js';
 import Cookies from 'js-cookie';
 
-const FetchLatestNews = () => {
+const FetchLatestNews = ({showText}) => {
   var [data, setData] = useState([]);
   const [query, setQuery] = useState("releases");
-  const [showText, setShowText] = useState(false);
-  const [state, setState] = React.useState({checkedC: false,});
+  //const [showText, setShowText] = useState(false);
+  //const [state, setState] = React.useState({checkedC: false,});
   // eslint-disable-next-line
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -30,10 +30,10 @@ const FetchLatestNews = () => {
   const [cookie, setCookie] = useState(``);
 
   //for switch button
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-    setShowText(!showText)
-  };
+  // const handleChange = (event) => {
+  //   setState({ ...state, [event.target.name]: event.target.checked });
+  //   setShowText(!showText)
+  // };
 
   //??G
   useEffect(() => {
@@ -82,7 +82,7 @@ const FetchLatestNews = () => {
      </button>
      <p>Search category: releases, stories, factsheets, updates or default</p>
 
-     <FormGroup>
+     {/* <FormGroup>
              <Typography component="div">
                <Grid component="label" container alignItems="center" spacing={1}>
                  <Grid item>content display options: </Grid>
@@ -93,7 +93,7 @@ const FetchLatestNews = () => {
                  <Grid item>Show</Grid>
                </Grid>
              </Typography>
-     </FormGroup>
+     </FormGroup> */}
 
      <ul>
        {currentPosts.map(item =>  (

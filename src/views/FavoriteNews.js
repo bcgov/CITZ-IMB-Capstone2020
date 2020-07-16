@@ -12,7 +12,7 @@ import axios from "axios";
 import Cookies from 'js-cookie';
 import PaginationFav from './PaginationFav.js';
 
-const FavoriteNews = (deleted) => {
+const FavoriteNews = ({deleted, showText}) => {
   const [cookieStore, setCookieStore] = useState(stringToArray(listCookies()));
   // eslint-disable-next-line
   const [index, setIndex] = useState(0);
@@ -145,7 +145,7 @@ const FavoriteNews = (deleted) => {
               <b> news type:</b>  {item.kind} <br/>
               <b> news key:</b>  {item.key} <br/>
               
-              {item.documents.map((documents, index) => <p key = {index}>{documents.detailsHtml = documents.detailsHtml.replace(/(<([^>]+)>)/ig, '')
+              {showText && item.documents.map((documents, index) => <p key = {index}>{documents.detailsHtml = documents.detailsHtml.replace(/(<([^>]+)>)/ig, '')
                                                                                                                                                 .replace(/&rsquo;/ig, '\'')
                                                                                                                                                 .replace(/(&ldquo;)|(&rdquo;)/g, '"')
                                                                                                                                                 .replace(/&ndash;/ig, ' - ')
