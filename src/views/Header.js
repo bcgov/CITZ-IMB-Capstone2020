@@ -35,7 +35,7 @@ function Header({updateFavorites, onDarkMode, theme, textSwitch}) {
           <Col xs={2}>
             <Dropdown>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                <img id="settings-button" src={require("../includes/settings-button.svg")} alt="settings-button" title="settings button" height="40" width="40" />
+                <img id="settings-button" src={require("../includes/settings-button-white.svg")} alt="settings-button" title="settings button" height="40" width="40" />
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
