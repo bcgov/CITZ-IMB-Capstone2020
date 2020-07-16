@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-23 14:59:48
- * @LastEditTime: 2020-07-07 17:15:05
+ * @LastEditTime: 2020-07-15 16:38:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020 - xordpe-dev\src\views\App.js
@@ -18,7 +18,6 @@ import {ThemeProvider} from "styled-components";
 import { GlobalStyles } from "./GlobalStyles.js";
 import { lightTheme, darkTheme } from "./Themes.js";
 import { UseDarkMode } from "./UseDarkMode.js";
-import Toggler from "./Toggler.js";
 import {
   BrowserRouter as Router,
   Switch,
@@ -27,8 +26,10 @@ import {
 import CookieConsent from "react-cookie-consent";
 
 function App() {
+
   const [theme, themeToggler, mountedComponent] = UseDarkMode();
-  const themeMode = theme === 'light' ? lightTheme : darkTheme;
+
+  const themeMode = theme === 'Dark' ? lightTheme : darkTheme;
   const [deleted, setDeleted] = useState(false);
 
   const updateFavorites = () => {
@@ -38,6 +39,11 @@ function App() {
   //The highlighted code is the only one added to UseDarkMode.js
   if(!mountedComponent) return <div/>
   
+  const handleDarkMode = () => {
+    //this is the key function to switch the mode
+    themeToggler();
+  };
+
   return (
     <div>
 <ThemeProvider theme={themeMode}>
@@ -45,9 +51,8 @@ function App() {
 <GlobalStyles/>
     <Router>
 
-        <Header updateFavorites={updateFavorites}/>
+        <Header updateFavorites={updateFavorites} onDarkMode={handleDarkMode} theme={theme} />
         {/* <Navbar /> */}
-        <Toggler theme={theme} toggleTheme={themeToggler} />
 
         <Switch>
 
@@ -72,7 +77,7 @@ function App() {
           onAccept={() => {
             alert("accepted!");
           }}
-          debug={true}
+          //debug={true}
           enableDeclineButton
           declineButtonText="Decline (optional)"
           onDecline={() => {
