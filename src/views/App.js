@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-23 14:59:48
- * @LastEditTime: 2020-07-16 10:56:31
+ * @LastEditTime: 2020-07-16 10:58:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020 - xordpe-dev\src\views\App.js
@@ -77,9 +77,9 @@ function App() {
           onAccept={() => {
             alert("accepted!");
           }}
-          //debug={true}
+          debug={true}
         >
-          This website uses cookies to enhance the user experience.{" "}
+      <center>This website uses cookies to enhance the user experience.</center>
 
         </CookieConsent>
 
