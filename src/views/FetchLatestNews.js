@@ -25,8 +25,8 @@ const FetchLatestNews = ({showText, newsType}) => {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
-  const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
-  const [url, setUrl] = useState(API_KEY);
+  //const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+  const [url, setUrl] = useState('https://news.api.gov.bc.ca/api/Posts/Latest/home/default?postKind=default&count=50&skip=0&api-version=1.0');
   const [cookie, setCookie] = useState(``);
   console.log(newsType);
 console.log(url);
