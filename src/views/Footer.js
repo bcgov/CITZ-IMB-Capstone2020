@@ -12,25 +12,25 @@ import '../css/Footer.css';
 function Footer() {
   return (
     // Contents of the footer
-    <div class="footer">
-      <div class="contain">
-      <div class="col">
+    <div className="footer">
+      <div className="contain">
+      <div className="col">
       <div />
         <a id="button" target="_blank" rel="noopener noreferrer" href="https://www2.gov.bc.ca/gov/content/home/disclaimer">Disclaimer</a>
       </div>
-      <div class="col">
+      <div className="col">
       <div />
         <a id="button" target="_blank" rel="noopener noreferrer" href="https://www2.gov.bc.ca/gov/content/home/copyright">Copyright</a>
       </div>
-      <div class="col">
+      <div className="col">
       <div />
         <a id="button" target="_blank" rel="noopener noreferrer" href="https://www2.gov.bc.ca/gov/content/home/privacy">Privacy</a>
       </div>
-      <div class="col">
+      <div className="col">
       <div />
         <a id="button" target="_blank" rel="noopener noreferrer" href="https://www2.gov.bc.ca/gov/content/home/accessible-government">Accessibility</a>
       </div>
-      <div class="col">
+      <div className="col">
       <div />
         <a id="button" target="_blank" rel="noopener noreferrer" href="https://github.com/bcgov/CITZ-IMB-Capstone2020/issues/new">Feedback</a>
       </div>
