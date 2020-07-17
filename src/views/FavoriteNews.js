@@ -1,7 +1,7 @@
 /*
  * @Author: Josh Dueck
  * @Date: 2020-06-09 10:15:15
- * @LastEditTime: 2020-07-14 12:54:57
+ * @LastEditTime: 2020-07-17 09:36:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \OPReactViaGit\src\FavoriteNews.js
@@ -27,7 +27,7 @@ const FavoriteNews = ({deleted, showText}) => {
 
   //below for pagenation
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(1);
+  const [postsPerPage] = useState(5);
 
   // Fetches object from API and stores it in the data variable
   useEffect(() => {
@@ -140,10 +140,9 @@ const FavoriteNews = ({deleted, showText}) => {
           {currentPosts.map(item =>  (
             <li key={item.atomId}>
               {item.documents.map((documents, index) => <h4 key = {index}>{documents.headline} 
-              <input type="image" src={require("../includes/garbage-can-delete.svg")} alt="pin" height="30" width="30" onClick={ () => setCookie(`${item.key}`)} />
               </h4>)}
               <b> news type:</b>  {item.kind} <br/>
-              <b> news key:</b>  {item.key} <br/>
+              <b> news key:</b>  {item.key} <input type="image" src={require("../includes/garbage-can-delete.svg")} alt="pin" height="30" width="30" onClick={ () => setCookie(`${item.key}`)} /><br/>
               
               {showText && item.documents.map((documents, index) => <p key = {index}>{documents.detailsHtml = documents.detailsHtml.replace(/(<([^>]+)>)/ig, '')
                                                                                                                                                 .replace(/&rsquo;/ig, '\'')
