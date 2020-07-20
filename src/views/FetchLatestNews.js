@@ -25,11 +25,11 @@ const FetchLatestNews = ({showText, newsType}) => {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
-  //const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
-  const [url, setUrl] = useState('https://news.api.gov.bc.ca/api/Posts/Latest/home/default?postKind=default&count=50&skip=0&api-version=1.0');
+  //const API_KEY = process.env.NEWS_API_KEY;
+  const [url, setUrl] = useState(`https://news.api.gov.bc.ca/api/Posts/Latest/home/default?postKind=releases&count=50&skip=0&api-version=1.0`);
   const [cookie, setCookie] = useState(``);
-  console.log(newsType);
-console.log(url);
+  console.log(url);
+
   //for switch button
   // const handleChange = (event) => {
   //   setState({ ...state, [event.target.name]: event.target.checked });
@@ -81,7 +81,7 @@ console.log(url);
                </Grid>
              </Typography>
      </FormGroup> */}
-     <h1 style={{textAlign: 'center'}}>Welcome to the BC Gov News Home Page</h1>
+     <h3 style={{textAlign: 'center'}}>Latest News</h3>
 
      <ul>
        {currentPosts.map(item =>  (
@@ -98,6 +98,7 @@ console.log(url);
                                                                                                                                             .replace(/&lsquo;/, '\'')
                                                                                                                                             .replace(/&nbsp;/ig, ' ')
                                                                                                                                             }</p>)}
+                                                                                                                                            <hr />
          </li> 
        ))}
      </ul>

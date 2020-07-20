@@ -32,7 +32,7 @@ function App() {
   const themeMode = theme === 'Dark' ? lightTheme : darkTheme;
   const [deleted, setDeleted] = useState(false);
   const [showText, setShowText] = useState(false);
-  const [newsType, setNewsType] = useState("default");
+  const [newsType, setNewsType] = useState("releases");
 
   const updateFavorites = () => {
     setDeleted(!deleted);
@@ -85,7 +85,7 @@ function App() {
 
     <CookieConsent
           onAccept={() => {
-            alert("accepted!");
+            //alert("accepted!");
           }}
           //debug={true}
         >

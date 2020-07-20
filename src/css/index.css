@@ -16,3 +16,10 @@ ul {
   list-style-type:none;
   padding-left: 0;
 }
+
+hr {
+  height:2px;
+  border-width:0;
+  color:gray;
+  background-color:gray;
+}
