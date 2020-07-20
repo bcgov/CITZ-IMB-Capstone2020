@@ -124,7 +124,7 @@ const FavoriteNews = ({deleted, showText}) => {
   if (data.length === 0) {
     return (
       <div className="container mt-5">
-        <h1>You have no tagged stories!</h1>
+        <h3>No Favorites</h3>
       </div>
     );
   }
@@ -133,7 +133,7 @@ const FavoriteNews = ({deleted, showText}) => {
     return (
       <div className="container mt-5">
 
-        <h1 style={{textAlign: 'center'}}>Favorite News</h1>
+        <h3 style={{textAlign: 'center'}}>Favorite News</h3>
         <br/>
 
         <ul>

@@ -4,8 +4,10 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: auto;
+    height: 50px;
     background-color: #003366;
+    border-top: 2px solid #F8B719;
+    padding-left: 10%;
   }
   .footer .col {
     width: 100px;
@@ -17,12 +19,12 @@
     padding: 0px 0px 2px 0px;
   }
 
-  @media only screen and (min-width: 1280px) {
+  /* @media only screen and (min-width: 1280px) {
     .contain {
       width: 1200px;
       margin: 0 auto;
     }
-  }
+  } */
 
 #button {
     color: #ffffff;
@@ -34,11 +36,6 @@
     padding-right: 0;
   }
 
-/* .news-filter-divider {
-    width: 1px;
-    height: 18px;
-    vertical-align: middle;
-    background-color: white;
-    margin-top: 3px;
-    display: inline-block;
-} */
+#home-button {
+  margin-top: 5px;
+}
