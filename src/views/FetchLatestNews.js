@@ -25,10 +25,9 @@ const FetchLatestNews = ({showText, newsType}) => {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
-  //const API_KEY = process.env.NEWS_API_KEY;
-  const [url, setUrl] = useState(`https://news.api.gov.bc.ca/api/Posts/Latest/home/default?postKind=releases&count=50&skip=0&api-version=1.0`);
+  const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
+  const [url, setUrl] = useState(API_KEY);
   const [cookie, setCookie] = useState(``);
-  console.log(url);
 
   //for switch button
   // const handleChange = (event) => {
@@ -45,7 +44,7 @@ const FetchLatestNews = ({showText, newsType}) => {
       setLoading(false);
     };
 
-    setUrl(`https://news.api.gov.bc.ca/api/Posts/Latest/home/default?postKind=${newsType}&count=50&skip=0&api-version=1.0`)
+    setUrl(`https://news.api.gov.bc.ca/api/Posts/Latest/home/default?postKind=${newsType}&count=50&skip=0&api-version=1.0`);
     fetchPosts();
   }, [url,newsType]);
 

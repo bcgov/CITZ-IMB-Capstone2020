@@ -63,8 +63,8 @@ function Header({updateFavorites, updateNewsType, onDarkMode, theme, textSwitch}
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item><Link to="/">Home</Link></Dropdown.Item>
-                <Dropdown.Item><Link to="/favorites">Favorites</Link></Dropdown.Item>
+                <Dropdown.Item as={Link} to="/">Home</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/favorites">Favorites</Dropdown.Item>
                 <Dropdown.Item onClick={ () => textSwitch()}>Show Text</Dropdown.Item>
                 <Dropdown.Divider />
                 <Dropdown.Item id="filter-by">Filter by:</Dropdown.Item>
