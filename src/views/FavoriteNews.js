@@ -151,6 +151,7 @@ const FavoriteNews = ({deleted, showText}) => {
                                                                                                                                                 .replace(/&lsquo;/, '\'')
                                                                                                                                                 .replace(/&nbsp;/ig, ' ')
                                                                                                                                                 }</p>)}
+            <hr />
             </li> 
           ))}
         </ul>
