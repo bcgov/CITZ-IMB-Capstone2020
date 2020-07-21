@@ -1,7 +1,7 @@
 /*
  * @Author: Josh Dueck
  * @Date: 2020-06-09 10:15:15
- * @LastEditTime: 2020-07-21 14:10:21
+ * @LastEditTime: 2020-07-21 14:15:00
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \OPReactViaGit\src\FavoriteNews.js
@@ -151,7 +151,7 @@ const FavoriteNews = ({deleted, showText}) => {
                                                                                                                                                 .replace(/&lsquo;/, '\'')
                                                                                                                                                 .replace(/&nbsp;/ig, ' ')
                                                                                                                                                 }</p>)}
-            <ColoredLine color="Fuchsia" />
+            <ColoredLine color="Lavender" />
             </li> 
           ))}
         </ul>

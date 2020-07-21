@@ -1,7 +1,7 @@
 /*
  * @Author: Murphy316
  * @Date: 2020-06-09 10:15:15
- * @LastEditTime: 2020-07-21 14:10:12
+ * @LastEditTime: 2020-07-21 14:15:19
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \OPReactViaGit\src\FetchLatestNews.js  
@@ -97,7 +97,7 @@ const FetchLatestNews = ({showText, newsType}) => {
                                                                                                                                             .replace(/&lsquo;/, '\'')
                                                                                                                                             .replace(/&nbsp;/ig, ' ')
                                                                                                                                             }</p>)}
-        <ColoredLine color="Fuchsia" />
+        <ColoredLine color="Lavender" />
          </li> 
        ))}
      </ul>
