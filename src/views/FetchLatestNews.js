@@ -1,7 +1,7 @@
 /*
  * @Author: Murphy316
  * @Date: 2020-06-09 10:15:15
- * @LastEditTime: 2020-07-16 21:07:47
+ * @LastEditTime: 2020-07-21 14:10:12
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \OPReactViaGit\src\FetchLatestNews.js  
@@ -97,7 +97,8 @@ const FetchLatestNews = ({showText, newsType}) => {
                                                                                                                                             .replace(/&lsquo;/, '\'')
                                                                                                                                             .replace(/&nbsp;/ig, ' ')
                                                                                                                                             }</p>)}
-                                                                                                                                            <hr />
+        <ColoredLine color="Lavender" />
+        {/* <ColoredLine color="Fuchsia" /> */}
          </li> 
        ))}
      </ul>
@@ -113,5 +114,14 @@ const FetchLatestNews = ({showText, newsType}) => {
 
   );
 };
+
+const ColoredLine = ({ color }) => (
+  <hr
+      style={{
+          color: color,
+          backgroundColor: color,
+      }}
+  />
+);
 
 export default FetchLatestNews;

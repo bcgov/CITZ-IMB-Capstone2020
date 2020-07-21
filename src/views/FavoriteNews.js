@@ -1,7 +1,7 @@
 /*
  * @Author: Josh Dueck
  * @Date: 2020-06-09 10:15:15
- * @LastEditTime: 2020-07-21 10:37:07
+ * @LastEditTime: 2020-07-21 14:10:21
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \OPReactViaGit\src\FavoriteNews.js
@@ -151,7 +151,8 @@ const FavoriteNews = ({deleted, showText}) => {
                                                                                                                                                 .replace(/&lsquo;/, '\'')
                                                                                                                                                 .replace(/&nbsp;/ig, ' ')
                                                                                                                                                 }</p>)}
-            <hr />
+            <ColoredLine color="Lavender" />
+            {/* <ColoredLine color="Fuchsia" /> */}
             </li> 
           ))}
         </ul>
@@ -166,4 +167,14 @@ const FavoriteNews = ({deleted, showText}) => {
   }
 }
 
+const ColoredLine = ({ color }) => (
+  <hr
+      style={{
+          color: color,
+          backgroundColor: color,
+      }}
+  />
+);
+
 export default FavoriteNews;
+
