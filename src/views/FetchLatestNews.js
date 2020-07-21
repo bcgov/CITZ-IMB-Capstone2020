@@ -97,8 +97,7 @@ const FetchLatestNews = ({showText, newsType}) => {
                                                                                                                                             .replace(/&lsquo;/, '\'')
                                                                                                                                             .replace(/&nbsp;/ig, ' ')
                                                                                                                                             }</p>)}
-        <ColoredLine color="Lavender" />
-        {/* <ColoredLine color="Fuchsia" /> */}
+        <ColoredLine color="Fuchsia" />
          </li> 
        ))}
      </ul>
