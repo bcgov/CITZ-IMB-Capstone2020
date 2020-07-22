@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-23 14:59:48
- * @LastEditTime: 2020-07-21 13:08:43
+ * @LastEditTime: 2020-07-22 10:44:11
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020 - xordpe-dev\src\views\App.js
@@ -24,6 +24,9 @@ import { useSelector } from 'react-redux';
 import { SW_INIT, SW_UPDATE } from './types.js';
 import Alert from './Alert.js';
 import '../css/App-alert.css'
+import About from './About.js';
+
+
 function App() {
 
   const [theme, themeToggler, mountedComponent] = UseDarkMode();
@@ -86,6 +89,7 @@ function App() {
       <GlobalStyles/>
         <Router>
           <Header updateFavorites={updateFavorites} onDarkMode={handleDarkMode} theme={theme} textSwitch={textSwitch}  updateNewsType={updateNewsType}/>
+          
           {/* <Navbar /> */}
           <div className="App-alert">
             {isServiceWorkerInitialized && (
@@ -101,6 +105,10 @@ function App() {
             )}
           </div>
           <Switch>
+            <Route path="/about">
+              <About />
+            </Route>
+            
             <Route path="/favorites">
               <FavoriteNews deleted={deleted} showText={showText}/>
             </Route>
