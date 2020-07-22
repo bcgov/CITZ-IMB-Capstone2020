@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-23 14:59:48
- * @LastEditTime: 2020-07-22 10:44:11
+ * @LastEditTime: 2020-07-22 13:35:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020 - xordpe-dev\src\views\App.js
@@ -124,7 +124,7 @@ function App() {
       </>
       </ThemeProvider>
 
-    <CookieConsent
+      <CookieConsent
           onAccept={() => {
             //alert("accepted!");
           }}
