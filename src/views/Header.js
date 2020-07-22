@@ -86,8 +86,8 @@ function Header({updateFavorites, updateNewsType, onDarkMode, theme, textSwitch}
                 <Dropdown.Item onClick={ () => onDarkMode()}>{`${theme}`} Mode</Dropdown.Item>
                 <Dropdown.Item onClick={ () => deleteAllCookies()}>Delete Cookies</Dropdown.Item>
                 <Dropdown.Divider />
-                <Dropdown.Item href="#/action-5">Updates</Dropdown.Item>
-                <Dropdown.Item href="#/action-6">About</Dropdown.Item>
+                {/* <Dropdown.Item href="#/action-5">Updates</Dropdown.Item> */}
+                <Dropdown.Item as={Link} to="/about">About</Dropdown.Item>
               </Dropdown.Menu>
                         
             </Dropdown>

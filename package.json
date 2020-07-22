@@ -1,6 +1,6 @@
 {
-  "name": "news-app",
-  "version": "0.1.0",
+  "name": "capstone2020",
+  "version": "0.10.1",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
