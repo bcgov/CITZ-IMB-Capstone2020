@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-22 10:35:33
- * @LastEditTime: 2020-07-22 11:58:41
+ * @LastEditTime: 2020-07-23 13:45:24
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020\src\views\About.js
@@ -15,7 +15,6 @@ const About = () => {
  
   return (
     <div className="container mt-5">
-        <h3><b>About</b></h3><br/>     
         <h5><b>Capstone2020 PWA Starter-Kit</b></h5>
         <p>VERSION.BUILD: v.{`${pjson.version}`}</p>
         <b><p>developed by:</p></b>
