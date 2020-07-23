@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-21 11:11:05
- * @LastEditTime: 2020-07-21 12:02:02
+ * @LastEditTime: 2020-07-23 11:27:53
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020\src\views\Alert.js

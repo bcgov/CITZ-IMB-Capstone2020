@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-23 14:59:48
- * @LastEditTime: 2020-07-23 10:47:57
+ * @LastEditTime: 2020-07-23 11:28:02
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020 - xordpe-dev\src\views\App.js
