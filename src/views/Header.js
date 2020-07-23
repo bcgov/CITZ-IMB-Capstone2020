@@ -59,7 +59,7 @@ function Header({updateFavorites, updateNewsType, onDarkMode, theme, textSwitch}
             <Col xs={4} sm={1}>
             <Dropdown>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                <img id="menu-dropdown" src={require("../includes/menu-dropdown-white.svg")} alt="menu-dropdown" title="menu dropdown" height="40" width="40" />
+                <img id="menu-dropdown" src={require("../includes/menu-dropdown-white.svg")} alt="menu-dropdown" title="menu dropdown" height="35" width="35" />
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
@@ -79,7 +79,7 @@ function Header({updateFavorites, updateNewsType, onDarkMode, theme, textSwitch}
           <Col xs={4} sm={2}>
             <Dropdown>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                <img id="settings-button" src={require("../includes/settings-button-white.svg")} alt="settings-button" title="settings button" height="40" width="40" />
+                <img id="settings-button" src={require("../includes/settings-button-white.svg")} alt="settings-button" title="settings button" height="35" width="35" />
               </Dropdown.Toggle>
 
               <Dropdown.Menu>

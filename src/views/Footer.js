@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-15 12:01:20
- * @LastEditTime: 2020-07-16 22:06:00
+ * @LastEditTime: 2020-07-23 10:51:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020\src\views\Footer.js
@@ -19,7 +19,7 @@ function Footer() {
       {/* <div className="contain"> */}
 
       <Link to="/">
-      <img id="home-button" src={require("../includes/home-white.svg")} alt="home-button" title="home button" height="40" width="40" />
+      <img id="home-button" src={require("../includes/home-white.svg")} alt="home-button" title="home button" height="35" width="35" />
       </Link>
         {/* <div className="col">
           <div />
