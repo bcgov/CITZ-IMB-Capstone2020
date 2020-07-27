@@ -38,9 +38,8 @@ const About = () => {
 
         <h5><b>Platform:</b></h5><br/>
         <ul>
-            <li>Developed using react.js, npm, on the <a href="https://BCDevExchange.org">https://BCDevExchange.org</a> DevOps Environment.</li>
-            <li>Additional info:  <a href="https://github.com/BCGov/CITZ-IMB-Capstone2020">https://github.com/BCGov/CITZ-IMB-Capstone2020</a></li>
-            <li>Documentation: <a href="https://github.com/BCGov/CITZ-IMB-Capstone2020/docs/">https://github.com/BCGov/CITZ-IMB-Capstone2020/docs/</a></li>
+            <li>Developed using react.js, npm, on the <a target="_blank" rel="noopener noreferrer" href="https://BCDevExchange.org">https://BCDevExchange.org</a> DevOps Environment.</li>
+            <li>Additional info:  <a target="_blank" rel="noopener noreferrer" href="https://github.com/BCGov/CITZ-IMB-Capstone2020">https://github.com/BCGov/CITZ-IMB-Capstone2020</a></li>
         </ul>
 
         <br/>
