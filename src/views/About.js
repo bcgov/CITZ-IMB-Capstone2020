@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-22 10:35:33
- * @LastEditTime: 2020-07-27 11:08:07
+ * @LastEditTime: 2020-07-27 11:45:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020\src\views\About.js
@@ -40,7 +40,7 @@ const About = () => {
         <ul>
             <li>Developed using react.js, npm, on the <a href="https://BCDevExchange.org">https://BCDevExchange.org</a> DevOps Environment.</li>
             <li>Additional info:  <a href="https://github.com/BCGov/CITZ-IMB-Capstone2020">https://github.com/BCGov/CITZ-IMB-Capstone2020</a></li>
-            <li>Documentation: <a href="https://github.com/bcgov/CITZ-IMB-Capstone2020/tree/master/docs/">https://github.com/bcgov/CITZ-IMB-Capstone2020/tree/master/docs/</a></li>
+            <li>Documentation: <a href="https://github.com/BCGov/CITZ-IMB-Capstone2020/tree/master/docs/">https://github.com/BCGov/CITZ-IMB-Capstone2020/tree/master/docs/</a></li>
         </ul>
 
         <br/>
