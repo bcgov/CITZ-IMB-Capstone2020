@@ -89,7 +89,7 @@ const FetchLatestNews = ({showText, newsType, theme}) => {
            <b> News Type:</b>  {item.kind} <br/>
            <b> News Key:</b>  {item.key} <input type="image" src={require(`../includes/pin-icon-${theme}.svg`)} alt="pin" height="20" width="20" onClick={ () => setCookie(`${item.key}`)} /><br/>
            
-           {/*//reverse ASCII code from api ..*/} 
+           {/*//reverse ASCII code from api test..*/} 
            {showText && item.documents.map((documents, index) => <p key = {index}>{documents.detailsHtml = documents.detailsHtml.replace(/(<([^>]+)>)/ig, '')
                                                                                                                                             .replace(/&rsquo;/ig, '\'')
                                                                                                                                             .replace(/(&ldquo;)|(&rdquo;)/g, '"')
