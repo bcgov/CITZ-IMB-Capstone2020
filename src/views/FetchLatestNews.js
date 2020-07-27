@@ -16,7 +16,7 @@ import axios from "axios";
 import Pagination from './Pagination.js';
 import Cookies from 'js-cookie';
 
-const FetchLatestNews = ({showText, newsType}) => {
+const FetchLatestNews = ({showText, newsType, theme}) => {
   var [data, setData] = useState([]);
   //const [query, setQuery] = useState(newsType);
   //const [showText, setShowText] = useState(false);
@@ -87,7 +87,7 @@ const FetchLatestNews = ({showText, newsType}) => {
          <li key={item.atomId}>
            {item.documents.map((documents, index) => <h4 key = {index}>{documents.headline} </h4>)}
            <b> News Type:</b>  {item.kind} <br/>
-           <b> News Key:</b>  {item.key} <input type="image" src={require("../includes/security-pin.svg")} alt="pin" height="20" width="20" onClick={ () => setCookie(`${item.key}`)} /><br/>
+           <b> News Key:</b>  {item.key} <input type="image" src={require(`../includes/pin-icon-${theme}.svg`)} alt="pin" height="20" width="20" onClick={ () => setCookie(`${item.key}`)} /><br/>
            
            {/*//reverse ASCII code from api ..*/} 
            {showText && item.documents.map((documents, index) => <p key = {index}>{documents.detailsHtml = documents.detailsHtml.replace(/(<([^>]+)>)/ig, '')

@@ -12,7 +12,7 @@ import axios from "axios";
 import Cookies from 'js-cookie';
 import PaginationFav from './PaginationFav.js';
 
-const FavoriteNews = ({deleted, showText}) => {
+const FavoriteNews = ({deleted, showText, theme}) => {
   const [cookieStore, setCookieStore] = useState(stringToArray(listCookies()));
   // eslint-disable-next-line
   const [index, setIndex] = useState(0);
@@ -28,6 +28,7 @@ const FavoriteNews = ({deleted, showText}) => {
   //below for pagenation
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
+  console.log(theme);
 
   // Fetches object from API and stores it in the data variable
   useEffect(() => {
@@ -142,7 +143,7 @@ const FavoriteNews = ({deleted, showText}) => {
               {item.documents.map((documents, index) => <h4 key = {index}>{documents.headline} 
               </h4>)}
               <b> news type:</b>  {item.kind} <br/>
-              <b> news key:</b>  {item.key} <input type="image" src={require("../includes/garbage-can-delete.svg")} alt="pin" height="30" width="30" onClick={ () => setCookie(`${item.key}`)} /><br/>
+              <b> news key:</b>  {item.key} <input type="image" src={require(`../includes/garbage-can-${theme}.svg`)} alt="pin" height="30" width="30" onClick={ () => setCookie(`${item.key}`)} /><br/>
               
               {showText && item.documents.map((documents, index) => <p key = {index}>{documents.detailsHtml = documents.detailsHtml.replace(/(<([^>]+)>)/ig, '')
                                                                                                                                                 .replace(/&rsquo;/ig, '\'')
