@@ -12,6 +12,7 @@ function Header({updateFavorites, updateNewsType, onDarkMode, theme, textSwitch,
 
   const [showHideText, setShowHideText] = useState('Show');
 
+  // used to swap dropdown text when Show/Hide text is clicked.
   useEffect(() => {
     const changeText = async () => {
       showText === false ? setShowHideText('Show') : setShowHideText('Hide');
@@ -19,7 +20,7 @@ function Header({updateFavorites, updateNewsType, onDarkMode, theme, textSwitch,
     changeText();
   }, [showText]);
 
-  
+  // deletes all cookies from this application from storage
   function deleteAllCookies() {
     var cookies = document.cookie.split(";");
 
@@ -32,6 +33,7 @@ function Header({updateFavorites, updateNewsType, onDarkMode, theme, textSwitch,
     updateFavorites();
   }
 
+  // Updates newsType state variable in App.js
   function filterNews(type) {
     updateNewsType(type);
   }
@@ -41,6 +43,7 @@ function Header({updateFavorites, updateNewsType, onDarkMode, theme, textSwitch,
       <Container fluid id="header">
         <Row id="header-top">
           
+          {/* BC Gov Logo */}
           <Link to="/">
             <img id="bc-gov-logo" src={require("../includes/gov_bc_logo.svg")} alt="bc-gov-logo" title="B.C. News Site" />
           </Link>
@@ -49,22 +52,11 @@ function Header({updateFavorites, updateNewsType, onDarkMode, theme, textSwitch,
           &emsp;
 
             <h3 id="bc-gov-news-text">Capstone 2020</h3>
-            {/* &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
-            <div className="bc-gov-news-filter">
-              <p className="bc-gov-news-filter-text2">Filter by :</p>&ensp;
-              <div className="news-filter-divider"></div>&ensp;
-              <p className="bc-gov-news-filter-text" onClick={() => {filterNews("default")}}> Default</p>&ensp;
-              <div className="news-filter-divider"></div>&ensp;
-              <p className="bc-gov-news-filter-text" onClick={() => {filterNews("releases")}}> Releases</p>&ensp;
-              <div className="news-filter-divider"></div>&ensp;
-              <p className="bc-gov-news-filter-text" onClick={() => {filterNews("stories")}}> Stories</p>&ensp;
-              <div className="news-filter-divider"></div>&ensp;
-              <p className="bc-gov-news-filter-text" onClick={() => {filterNews("factsheets")}}> Factsheets</p>&ensp;
-              <div className="news-filter-divider"></div>&ensp;
-              <p className="bc-gov-news-filter-text" onClick={() => {filterNews("updates")}}> Updates</p>
-            </div> */}
+            {/* ##### Empty Col tag to shift dropdown to the right ##### */}
             <Col></Col>
+
+            {/* Main dropdown. Commented code are icons that could potentially go in the dropdown */}
             <Col xs={4} sm={2}>
             <Dropdown>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -73,9 +65,7 @@ function Header({updateFavorites, updateNewsType, onDarkMode, theme, textSwitch,
 
               <Dropdown.Menu>
                 <Dropdown.Item as={Link} to="/">Home</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/favorites">
-                {/* <img id="favorite-icon" src={require("../includes/favorite-icon.svg")} alt="favorite-icon" title="favorite icon" height="24" width="24" /> */}
-                  Favorites</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/favorites">Favorites</Dropdown.Item>
                 <Dropdown.Item onClick={ () => textSwitch()}>{showHideText} Text</Dropdown.Item>
                 <Dropdown.Divider />
                 <Dropdown.Item id="bold-text">
@@ -90,39 +80,13 @@ function Header({updateFavorites, updateNewsType, onDarkMode, theme, textSwitch,
                 <img id="settings-icon" src={require("../includes/settings-outline.svg")} alt="settings-icon" title="settings icon" height="24" width="24" />
                   Settings:</Dropdown.Item>
                 <Dropdown.Item onClick={ () => onDarkMode()}>{`${theme}`} Mode</Dropdown.Item>
-                <Dropdown.Item onClick={ () => deleteAllCookies()}>
-                {/* <img id="delete-all" src={require("../includes/delete-all.svg")} alt="delete-cookies" title="delete cookies" height="24" width="24" /> */}
-                  End Session</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/about">
-                {/* <img id="info-icon" src={require("../includes/info-icon.svg")} alt="about-page-icon" title="about page icon" height="24" width="24" /> */}
-                  About</Dropdown.Item>
-              </Dropdown.Menu>
-                        
-            </Dropdown>
-            </Col>
-          {/* <Col xs={4} sm={2}>
-            <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
-                <img id="settings-button" src={require("../includes/settings-button-white.svg")} alt="settings-button" title="settings button" height="35" width="35" />
-              </Dropdown.Toggle>
-
-              <Dropdown.Menu>
-                <Dropdown.Item onClick={ () => onDarkMode()}>{`${theme}`} Mode</Dropdown.Item>
-                <Dropdown.Item onClick={ () => deleteAllCookies()}>Delete Cookies</Dropdown.Item>
-                <Dropdown.Divider />
+                <Dropdown.Item onClick={ () => deleteAllCookies()}>End Session</Dropdown.Item>
                 <Dropdown.Item as={Link} to="/about">About</Dropdown.Item>
               </Dropdown.Menu>
                         
             </Dropdown>
-            </Col> */}
+            </Col>
         </Row>
-        
-        {/* Header bottom if we want one
-        <Row>
-          <Col id="header-bottom">
-          <h2>BC Gov News</h2>
-          </Col>
-        </Row> */}
       </Container>
      
     );
