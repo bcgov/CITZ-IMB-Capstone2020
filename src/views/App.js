@@ -88,7 +88,7 @@ function App() {
       <>
       <GlobalStyles/>
         <Router>
-          <Header updateFavorites={updateFavorites} onDarkMode={handleDarkMode} theme={theme} textSwitch={textSwitch}  updateNewsType={updateNewsType}/>
+          <Header updateFavorites={updateFavorites} onDarkMode={handleDarkMode} theme={theme} textSwitch={textSwitch} showText={showText} updateNewsType={updateNewsType}/>
           
           {/* <Navbar /> */}
           <div className="App-alert">
@@ -110,11 +110,11 @@ function App() {
             </Route>
             
             <Route path="/favorites">
-              <FavoriteNews deleted={deleted} showText={showText}/>
+              <FavoriteNews deleted={deleted} showText={showText} theme={theme}/>
             </Route>
 
             <Route path="/">
-              <FetchLatestNews showText={showText} newsType={newsType}/>
+              <FetchLatestNews showText={showText} newsType={newsType} theme={theme}/>
             </Route>
           </Switch>
           <br/><br/><br/><br/><br/><br/><br/>
