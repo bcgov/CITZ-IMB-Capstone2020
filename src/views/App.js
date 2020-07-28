@@ -9,7 +9,6 @@
 import React, {useState} from 'react';
 import Header from './Header.js';
 import Footer from './Footer.js';
-//import Navbar from './Navbar.js';
 import FetchLatestNews from './FetchLatestNews.js';
 import FavoriteNews from './FavoriteNews.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -35,7 +34,7 @@ function App() {
   const [showText, setShowText] = useState(false);
   const [newsType, setNewsType] = useState("releases");
 
-  //call back functions from line 37 - line 59 for update notifivation, order is really important!!!!!!!!!
+  //call back functions from line 39 - line 61 for update notifivation, order is really important!!!!!!!!!
   const isServiceWorkerInitialized = useSelector(
     state => state.serviceWorkerInitialized,
   );
@@ -60,6 +59,7 @@ function App() {
     }
   };
 
+  // functions sent to Header.js to access state variables
   const updateFavorites = () => {
     setDeleted(!deleted);
   }
@@ -90,7 +90,6 @@ function App() {
         <Router>
           <Header updateFavorites={updateFavorites} onDarkMode={handleDarkMode} theme={theme} textSwitch={textSwitch} showText={showText} updateNewsType={updateNewsType}/>
           
-          {/* <Navbar /> */}
           <div className="App-alert">
             {isServiceWorkerInitialized && (
               <Alert text="Service Worker is initialized for the first time." type={SW_INIT} />
