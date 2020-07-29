@@ -11,8 +11,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Cookies from 'js-cookie';
 import PaginationFav from './PaginationFav.js';
+import {CookieStore} from '../stores/CookieStore.js';
 
-const FavoriteNews = ({deleted, showText}) => {
+const FavoriteNews = ({deleted, showText, theme}) => {
+  const [listCookies, stringToArray] = CookieStore();
   const [cookieStore, setCookieStore] = useState(stringToArray(listCookies()));
   // eslint-disable-next-line
   const [index, setIndex] = useState(0);
@@ -28,6 +30,7 @@ const FavoriteNews = ({deleted, showText}) => {
   //below for pagenation
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
+  console.log(theme);
 
   // Fetches object from API and stores it in the data variable
   useEffect(() => {
@@ -46,7 +49,6 @@ const FavoriteNews = ({deleted, showText}) => {
       //whole key in one line for replacement
       var wholeCookie = '';
       for (var i = 0 ; i <= cookieStore.length; i++) {
-        //aString += theCookies[i-1].split("=")[0] + "\n";
         wholeCookie += 'postKeys=' + cookieStore[i] + '&';
       }
       console.log(wholeCookie);
@@ -54,10 +56,7 @@ const FavoriteNews = ({deleted, showText}) => {
     }
     
     const updateIndex = async () => {
-      // setKey(cookieStore[index]);
-      // setUrl(`https://news.api.gov.bc.ca/api/Posts/${key}?api-version=1.0`); 
       setKey(wholeCookie());
-      //setKey('postKeys=' + cookieStore[index] + '&');
       setUrl(`https://news.api.gov.bc.ca/api/Posts?${key}api-version=1.0`); 
     };
 
@@ -72,43 +71,9 @@ const FavoriteNews = ({deleted, showText}) => {
 
     removeCookie();
     setCookieStore(stringToArray(listCookies()));
+// eslint-disable-next-line
   }, [cookie, deleted]);
-
-  // Turning cookies into a string of key values separated by spaces and new lines
-  function listCookies() {
-      var theCookies = document.cookie.split(';');
-      var aString = '';
-      for (var i = 1 ; i <= theCookies.length; i++) {
-          //aString += theCookies[i-1].split("=")[0] + "\n";
-          aString += theCookies[i-1].split("=")[0] + "&";
-      }
-
-      return aString;
-      }
-
-      // takes a string of cookies and returns an array of strings with the name of each cookie
-      function stringToArray(aString) {
-          var cookieArray = [];
-          // while (aString.length > 1) {
-          //   if (aString.charAt(0) === ' ' || aString.charAt(0) === '\n') {
-          //       aString = aString.substr(1);
-          //   }
-          //   cookieArray.push(aString.split('\n')[0]);
-          //   aString = aString.slice(aString.split('\n')[0].length);
-          // }
-          while (aString.length > 1) {
-            if (aString.charAt(0) === ' ' || aString.charAt(0) === '&') {
-                aString = aString.substr(1);
-            }
-            if (aString.charAt(0) === ' ' || aString.charAt(0) === '&') {
-              aString = aString.substr(1);
-            }
-            cookieArray.push(aString.split('&')[0]);
-            aString = aString.slice(aString.split('&')[0].length);
-          }
-
-          return cookieArray;
-      }
+  
 
   //below for pagenation
   // Get current posts
@@ -137,12 +102,13 @@ const FavoriteNews = ({deleted, showText}) => {
         <br/>
 
         <ul>
+          {/* currentPosts is an array of news articles. Each individual news article is mapped to 'item'. */}
           {currentPosts.map(item =>  (
             <li key={item.atomId}>
               {item.documents.map((documents, index) => <h4 key = {index}>{documents.headline} 
               </h4>)}
               <b> news type:</b>  {item.kind} <br/>
-              <b> news key:</b>  {item.key} <input type="image" src={require("../includes/garbage-can-delete.svg")} alt="pin" height="30" width="30" onClick={ () => setCookie(`${item.key}`)} /><br/>
+              <b> news key:</b>  {item.key} <input type="image" src={require(`../includes/garbage-can-${theme}.svg`)} alt="pin" height="30" width="30" onClick={ () => setCookie(`${item.key}`)} /><br/>
               
               {showText && item.documents.map((documents, index) => <p key = {index}>{documents.detailsHtml = documents.detailsHtml.replace(/(<([^>]+)>)/ig, '')
                                                                                                                                                 .replace(/&rsquo;/ig, '\'')

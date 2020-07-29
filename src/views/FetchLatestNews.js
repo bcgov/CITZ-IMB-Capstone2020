@@ -9,18 +9,11 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import FormGroup from '@material-ui/core/FormGroup';
-// import Grid from '@material-ui/core/Grid';
-// import Typography from '@material-ui/core/Typography';
-// import AntSwitch from './AntSwitch.js';
 import Pagination from './Pagination.js';
 import Cookies from 'js-cookie';
 
-const FetchLatestNews = ({showText, newsType}) => {
+const FetchLatestNews = ({showText, newsType, theme}) => {
   var [data, setData] = useState([]);
-  //const [query, setQuery] = useState(newsType);
-  //const [showText, setShowText] = useState(false);
-  //const [state, setState] = React.useState({checkedC: false,});
   // eslint-disable-next-line
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -29,13 +22,7 @@ const FetchLatestNews = ({showText, newsType}) => {
   const [url, setUrl] = useState(API_KEY);
   const [cookie, setCookie] = useState(``);
 
-  //for switch button
-  // const handleChange = (event) => {
-  //   setState({ ...state, [event.target.name]: event.target.checked });
-  //   setShowText(!showText)
-  // };
-
-  //??G
+  // Getter for the news articles. API fetch
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
@@ -68,28 +55,17 @@ const FetchLatestNews = ({showText, newsType}) => {
   return (
     <div className='container mt-5'>
       <React.Fragment>
-     {/* <FormGroup>
-             <Typography component="div">
-               <Grid component="label" container alignItems="center" spacing={1}>
-                 <Grid item>content display options: </Grid>
-                 <Grid item>Hide</Grid>
-                 <Grid item>
-                   <AntSwitch checked={state.checkedC} onChange={handleChange} name="checkedC" />
-                 </Grid>
-                 <Grid item>Show</Grid>
-               </Grid>
-             </Typography>
-     </FormGroup> */}
      <h3 style={{textAlign: 'center'}}>Latest News</h3>
 
      <ul>
+       {/* currentPosts is an array of news articles. Each individual news article is mapped to 'item'. */}
        {currentPosts.map(item =>  (
          <li key={item.atomId}>
            {item.documents.map((documents, index) => <h4 key = {index}>{documents.headline} </h4>)}
            <b> News Type:</b>  {item.kind} <br/>
-           <b> News Key:</b>  {item.key} <input type="image" src={require("../includes/security-pin.svg")} alt="pin" height="20" width="20" onClick={ () => setCookie(`${item.key}`)} /><br/>
+           <b> News Key:</b>  {item.key} <input type="image" src={require(`../includes/pin-icon-${theme}.svg`)} alt="pin" height="20" width="20" onClick={ () => setCookie(`${item.key}`)} /><br/>
            
-           {/*//reverse ASCII code from api ..*/} 
+           {/* When showText is true, displays news article body and replaces special characters with readable ones. Showtext toggle is in Header.js dropdown */} 
            {showText && item.documents.map((documents, index) => <p key = {index}>{documents.detailsHtml = documents.detailsHtml.replace(/(<([^>]+)>)/ig, '')
                                                                                                                                             .replace(/&rsquo;/ig, '\'')
                                                                                                                                             .replace(/(&ldquo;)|(&rdquo;)/g, '"')
