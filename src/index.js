@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-05 10:01:47
- * @LastEditTime: 2020-07-21 11:25:05
+ * @LastEditTime: 2020-07-29 20:13:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020\src\index.js
@@ -16,8 +16,10 @@ import * as serviceWorker from './serviceWorker';
 import configureStore from './views/store.js';
 import { SW_INIT, SW_UPDATE } from './views/types.js';
 
+//store 3 return values from configureStore() from store.js to controw the serviceworker
 const store = configureStore();
 
+//The <Provider> makes the Redux store available to any nested components
 ReactDOM.render(
   <Provider store={store}>
     <App />

@@ -54,6 +54,7 @@ export function register(config) {
   }
 }
 
+//this function did all magic to monitor there is an update on app or not
 function registerValidSW(swUrl, config) {
   navigator.serviceWorker
     .register(swUrl)
@@ -75,6 +76,7 @@ function registerValidSW(swUrl, config) {
               );
 
               // Execute callback
+              // check there is a new version of serviseworcker comming in or not!!!
               if (config && config.onUpdate) {
                 config.onUpdate(registration);
               }

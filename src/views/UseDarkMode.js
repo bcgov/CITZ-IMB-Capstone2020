@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-07 15:29:49
- * @LastEditTime: 2020-07-15 16:36:44
+ * @LastEditTime: 2020-07-29 20:08:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020\src\views\UseDarkMode.js
@@ -17,7 +17,8 @@ export const UseDarkMode = () => {
         window.localStorage.setItem('theme', mode)
         setTheme(mode)
     };
-
+    //this is the most important function to switch different theme
+    //in App.js we put this function in Callback to switch theme.
     const themeToggler = () => {
         theme === 'Dark' ? setMode('Light') : setMode('Dark')
     };

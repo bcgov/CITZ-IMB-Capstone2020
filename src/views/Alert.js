@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-21 11:11:05
- * @LastEditTime: 2020-07-23 11:27:53
+ * @LastEditTime: 2020-07-29 19:42:29
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020\src\views\Alert.js
@@ -12,6 +12,7 @@ import { useDispatch } from 'react-redux';
 
 import '../css/Alert.css';
 
+//Alert box when user see serviceworker notification
 const Alert = ({ text, buttonText, type, onClick }) => {
   const dispatch = useDispatch();
 
