@@ -15,10 +15,10 @@
 
 * When testing your local development, we suggest using the [Netlify](https://www.netlify.com/) as a rapid test platform once you have your solution working the way your users expect, then deploy to your intended environment (OpenShift, Azure, AWS, etc). 
 
-* How to Taking Control the Solution Code from Gov's master Repository to Your Repository
+* Working locally
 
 
-## How to Taking Control the Solution Code from Gov's master Repository to Your Repository
+## Steps to fork from the BCGov capstone2020 master repository to your local repository
 
 1. Navigate into our [solution repository](https://github.com/bcgov/CITZ-IMB-Capstone2020)
 
@@ -30,7 +30,7 @@
 3. Download the forked solution app in your local by following [build.md](./build.md)
 
 
-4. (**Optional**) If you have Contributors, you also have to make the connection between your local and the master branch for the solution app. You have to check out is your local up-to-date with the master branch or not before you want to make a pull request. If you don't do so you might over-write others' work.
+4. (**Optional**) If you have Contributors, you must establish  the connection between your local and the master branch for the solution app.  Verify that your local repo is current with the master branch (or not), before you make a pull request. If you don't do so you might over-write the work of others.
 
    * Checkout your remote URL, run following command in terminal:
    ```sh
@@ -79,7 +79,7 @@
    $ git commit -m "initial commit"
    $ git push
    ```
-## How to Make a Pull Request From Your Forked Repository to Master Repository 
+## How to Make a Pull Request From Your Forked Repository to the Master Repository
 
 1. Compared with your forked repository, if the master repository is not update-to-date, your **forked repository** will look like following here. Click "Pull Request" to create a pull request from your forked repository to master 
 
@@ -96,6 +96,8 @@
 4. Wait at least one admin reviewed your changes, until [pipeline finish deployment](./deploy.md), and finally, an admin will click the "merge" button
 
 ## How to deploy your local solution app to [Netlify](https://www.netlify.com/) for testing
+
+NOTE: You can create a new project in Netlify directly by using the solution repo in GitHub (by using webhooks); However, GitHub may (likely) throw security notifications if your account has 2-factor authentication enabled.
 
 ### <ins>NOTICE</ins>: You can create a new project in Netlify directly use the solution repo in GitHub (by using webhooks); However, GitHub will keep throwing some security notification if your account has 2-factor authentication
 
