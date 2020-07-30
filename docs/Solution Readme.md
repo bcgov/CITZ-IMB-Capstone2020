@@ -49,7 +49,7 @@ During the summer of 2020 working with a developer team from Camosun College we 
 
 3. **PIA:** contact the [Ministry Privacy Officer](https://www2.gov.bc.ca/gov/content/governments/services-for-government/information-management-technology/privacy/resources/privacy-officers) (MPO) for privacy advice and guidance for your project
 
-4.	**Standards:** Follow Governments Application & Web Development & Deployment standard Outline and the database security standard for Information Protection Standard . 
+4.	**Standards:** Follow Government’s [Application & Web Development & Deployment Standard](https://www2.gov.bc.ca/assets/gov/government/services-for-government-and-broader-public-sector/information-technology-services/standards-files/security_standard_application_web_development_deployment.pdf) and the [Database Security Standard for Information Protection](https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/services-policies-for-government/policies-procedures/it-policies/database_security_standards_for_information_protection_-_2018-04_version_1.pdf). 
 
 5.	**Best Practices:** 
     * Design for Data: Use [Flux](https://facebook.github.io/flux/) as an architectural pattern.
