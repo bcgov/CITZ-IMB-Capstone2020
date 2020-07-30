@@ -38,15 +38,15 @@ Objectives include:
 
 ## Project Status
 
-> **IN DEVELOPMENT**
+> **Released as ALPHA July 31,2020**
 
 ## Development
 
 Node.js | react.js | OpenShift 3 | Jenkins |  GitHub 
 
-> We are actively adding new features and enhancements.
+> Issues, enhancements and feedback are welcomed [here](https://github.com/bcgov/CITZ-IMB-Capstone2020/issues)
 
-Read the documentation [here](./docs/README.md)
+Read the documentation [here](https://github.com/bcgov/CITZ-IMB-Capstone2020/blob/master/docs/Solution%20Readme.md)
 
 ## License
 
