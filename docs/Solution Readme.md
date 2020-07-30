@@ -150,7 +150,7 @@ The key elements which are provided include:
 
 ## Selecting features:
 
-* As shown in the [Features](https://github.com/Murphy316/mdfile/blob/master/docs/README.md#features) description there are several features we have implemented in the starter-kit that demonstrate filtering the results that are returned from the NewsBC API as well as the other user-selected options such as "Dark/Light Mode",  "Show/Hide Text", bookmarked story "Favorites". When a user selects "End Session" all of the cookies associated with the user will be destroyed.
+* As shown in the [Features](https://github.com/bcgov/CITZ-IMB-Capstone2020/blob/master/docs/Solution%20Readme.md#features) description there are several features we have implemented in the starter-kit that demonstrate filtering the results that are returned from the NewsBC API as well as the other user-selected options such as "Dark/Light Mode",  "Show/Hide Text", bookmarked story "Favorites". When a user selects "End Session" all of the cookies associated with the user will be destroyed.
 
 <p align="center">
     <img src="./images/selecting-features.png">
