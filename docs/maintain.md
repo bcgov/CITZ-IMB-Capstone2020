@@ -97,9 +97,7 @@
 
 ## How to deploy your local solution app to [Netlify](https://www.netlify.com/) for testing
 
-NOTE: You can create a new project in Netlify directly by using the solution repo in GitHub (by using webhooks); However, GitHub may (likely) throw security notifications if your account has 2-factor authentication enabled.
-
-### <ins>NOTICE</ins>: You can create a new project in Netlify directly use the solution repo in GitHub (by using webhooks); However, GitHub will keep throwing some security notification if your account has 2-factor authentication
+### <ins>NOTICE</ins>: You can create a new project in Netlify directly by using the solution repo in GitHub (by using webhooks); However, GitHub may (likely) throw security notifications if your account has 2-factor authentication enabled
 
 1. Navigate to [Netlify](https://www.netlify.com/)
 
