@@ -1,0 +1,171 @@
+Folder PATH listing for volume Entertainment
+Volume serial number is 301E-5CAF
+E:.
+|   .env
+|   .gitignore
+|   COMPLIANCE.yaml
+|   Jenkinsfile
+|   LICENSE
+|   output.txt
+|   package-lock.json
+|   package.json
+|   README.md
+|   
++---.jenkins
+|   |   Jenkinsfile
+|   |   pipeline-cli
+|   |   README.md
+|   |   
+|   +---.pipeline
+|   |   |   build.js
+|   |   |   clean.js
+|   |   |   deploy.js
+|   |   |   npmw
+|   |   |   package-lock.json
+|   |   |   package.json
+|   |   |   
+|   |   \---lib
+|   |           build.js
+|   |           clean.js
+|   |           config.js
+|   |           deploy.js
+|   |           
+|   +---docker
+|   |   |   Dockerfile
+|   |   |   
+|   |   \---contrib
+|   |       \---jenkins
+|   |           \---configuration
+|   |               |   scriptApproval.xml
+|   |               |   
+|   |               +---jobs
+|   |               |   +---CITZ-IMB-CAPSTONE2020
+|   |               |   |       config.xml
+|   |               |   |       
+|   |               |   +---_jenkins
+|   |               |   |       config.xml
+|   |               |   |       
+|   |               |   \---_SYS
+|   |               |       \---jobs
+|   |               |           +---ON_GIT_EVENT
+|   |               |           |       config.xml.install.groovy
+|   |               |           |       config.xml.template
+|   |               |           |       
+|   |               |           \---ON_JIRA_EVENT
+|   |               |                   config.xml.install.groovy
+|   |               |                   config.xml.template
+|   |               |                   
+|   |               \---scripts.groovy.d
+|   |                       on-gh-event.groovy
+|   |                       on-jira-event.groovy
+|   |                       
+|   \---openshift
+|           jenkins.bc.json
+|           jenkins.dc.json
+|           secrets.json
+|           
++---.openshiftio
+|   |   application.yaml
+|   |   basic.yaml
+|   |   build.yaml
+|   |   deployment.yaml
+|   |   
+|   \---.pipeline
+|       |   build.js
+|       |   clean.js
+|       |   deploy.js
+|       |   npmw
+|       |   package-lock.json
+|       |   package.json
+|       |   
+|       \---lib
+|               build.js
+|               clean.js
+|               config.js
+|               deploy.js
+|               
++---docs
+|       README.md
+|       
++---public
+|       favicon.ico
+|       index.html
+|       logo192.png
+|       logo512.png
+|       manifest.json
+|       offline.html
+|       robots.txt
+|       serviceworker.js
+|       
++---src
+|   |   index.js
+|   |   serviceWorker.js
+|   |   
+|   +---actions
+|   |       temp.js
+|   |       
+|   +---css
+|   |       Alert.css
+|   |       App-alert.css
+|   |       App.css
+|   |       Footer.css
+|   |       Header.css
+|   |       index.css
+|   |       
+|   +---dispatcher
+|   |       temp.js
+|   |       
+|   +---includes
+|   |       delete-all.svg
+|   |       favorite-icon.svg
+|   |       filter-icon.svg
+|   |       garbage-can-Dark.svg
+|   |       garbage-can-Light.svg
+|   |       gov_bc_logo.svg
+|   |       home-white.svg
+|   |       info-icon.svg
+|   |       logo.svg
+|   |       menu-dropdown-white.svg
+|   |       pin-icon-Dark.svg
+|   |       pin-icon-Light.svg
+|   |       security-pin.svg
+|   |       settings-button-white.svg
+|   |       settings-button.svg
+|   |       settings-outline.svg
+|   |       
+|   +---stores
+|   |       CookieStore.js
+|   |       
+|   +---testing
+|   |       App.test.js
+|   |       setupTests.js
+|   |       
+|   +---tools
+|   |       temp.js
+|   |       
+|   \---views
+|           About.js
+|           Alert.js
+|           App.js
+|           FavoriteNews.js
+|           FetchLatestNews.js
+|           Footer.js
+|           GlobalStyles.js
+|           Header.js
+|           Pagination.js
+|           PaginationFav.js
+|           reducers.js
+|           store.js
+|           Themes.js
+|           types.js
+|           UseDarkMode.js
+|           
+\---tmp
+    \---nodeshift
+        +---build
+        |       archive.tar
+        |       
+        \---resource
+                openshift.json
+                openshift.yaml
+                

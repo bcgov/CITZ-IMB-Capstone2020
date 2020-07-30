@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-23 14:59:48
- * @LastEditTime: 2020-07-23 11:38:12
+ * @LastEditTime: 2020-07-29 19:50:03
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020 - xordpe-dev\src\views\App.js
@@ -29,6 +29,7 @@ import About from './About.js';
 function App() {
 
   const [theme, themeToggler, mountedComponent] = UseDarkMode();
+  //check out the current theme is dark mode or not
   const themeMode = theme === 'Dark' ? lightTheme : darkTheme;
   const [deleted, setDeleted] = useState(false);
   const [showText, setShowText] = useState(false);
@@ -45,6 +46,7 @@ function App() {
     state => state.serviceWorkerRegistration,
   );
 
+  //call when there is a new version of serviceworker generated
   const updateServiceWorker = () => {
     const registrationWaiting = serviceWorkerRegistration.waiting;
 
@@ -123,6 +125,7 @@ function App() {
       </>
       </ThemeProvider>
 
+      {/* cookie notification */}
       <CookieConsent
           onAccept={() => {
             //alert("accepted!");
