@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-22 10:35:33
- * @LastEditTime: 2020-07-30 14:05:45
+ * @LastEditTime: 2020-07-30 15:12:46
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020\src\views\About.js
@@ -65,6 +65,8 @@ const TestSize = ({ size }) => (
           fontSize: size,
         }}
         href="http://camosun.ca/learn/programs/information-computer-systems/"
+        // eslint-disable-next-line
+        target="_blank"
     >
       Information and Computer Systems</a>
     <p
