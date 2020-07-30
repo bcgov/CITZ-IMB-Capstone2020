@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-22 10:35:33
- * @LastEditTime: 2020-07-27 15:50:25
+ * @LastEditTime: 2020-07-30 13:11:52
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020\src\views\About.js
@@ -23,9 +23,8 @@ const About = () => {
             <li>Josh: josh.dueck@hotmail.com</li>
             <li>Murphy: liqi316@live.com</li>
             <li>Kelly: marchkellyj@gmail.com</li>
+            <TestSize size = '13px' />
         </ul>
-
-        <br/>
 
         <ul>
             <li>This project is open sourced for fair use, with attribution.</li>
@@ -59,5 +58,24 @@ const About = () => {
     </div>
   );
 }
- 
+
+const TestSize = ({ size }) => (
+  <div>
+    <a style={{
+          fontSize: size,
+        }}
+        href="http://camosun.ca/learn/programs/computer-systems-technology/"
+    >
+      Information and Computer Systems</a>
+    <p
+        style={{
+          fontSize: size,
+        }}
+    >
+      Camosun College, Victoria BC
+    </p>
+  </div>
+);
+
+
 export default About;
