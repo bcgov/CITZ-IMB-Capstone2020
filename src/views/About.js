@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-22 10:35:33
- * @LastEditTime: 2020-07-30 13:11:52
+ * @LastEditTime: 2020-07-30 14:05:45
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \CITZ-IMB-Capstone2020\src\views\About.js
@@ -64,7 +64,7 @@ const TestSize = ({ size }) => (
     <a style={{
           fontSize: size,
         }}
-        href="http://camosun.ca/learn/programs/computer-systems-technology/"
+        href="http://camosun.ca/learn/programs/information-computer-systems/"
     >
       Information and Computer Systems</a>
     <p
