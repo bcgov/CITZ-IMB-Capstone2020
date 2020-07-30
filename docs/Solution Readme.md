@@ -8,7 +8,7 @@
 --> 
 # Capstone2020, a Progressive Web App “starter-kit”
 
-## Introduction
+# Introduction
 
 This solution is a react.js based client that consumes a DataBC API.
 
