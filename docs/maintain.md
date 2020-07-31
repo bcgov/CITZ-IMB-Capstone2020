@@ -69,9 +69,9 @@
    $ git commit -m "initial commit"
    ```
    ```sh
-   $ npm version patch
-   $ npm version major
-   $ npm version minor
+   $ npm version patch          + 0.0.1
+   $ npm version minor          + 0.1.0
+   $ npm version major          + 1.0.0
    ```
 6. Add your change(s), commit your change(s), and push your change(s) to your forked repository by running:
    ```sh
