@@ -62,7 +62,7 @@ During the summer of 2020 working with a developer team from Camosun College we 
 
 # Features
 
-1. **Installable mobile solution:**  <em>the Capstone2020 starter kit web site was designed to be a user-installable mobile solution. When the user visits the landing page they are asked if they wish to install the solution locally. The mechanics of how this I have done is handled by the progressive Web App (PWA) framework.</em>
+1. **Installable mobile solution:**  <em>the Capstone2020 starter kit web site was designed to be a user-installable mobile solution. When the user visits the landing page they are asked if they wish to install the solution locally. The mechanics of how this works is handled by the Progressive Web App (PWA) framework.</em>
 
     <em>Notice below: the user is prompted with an **install notice**. Optionally some devices will show an install button (shown with a yellow box )</em>
 
@@ -114,7 +114,7 @@ During the summer of 2020 working with a developer team from Camosun College we 
 
 The 'PWA starter kit' is based upon the create-react-app solution from Facebook developed using react.js. This ‘start-kit’ provides product owners with a foundation to develop mobile applications. 
 
-By using the start-kit you are inheriting architecture decisions. You should review and adapt the architecture to meet your unique needs. [This article](https://blog.usejournal.com/architecting-your-react-application-5af9cd65a891) to start you on your journey.
+By using the start-kit you are inheriting architectural decisions. You should review and adapt the architecture to meet your unique needs [This article](https://blog.usejournal.com/architecting-your-react-application-5af9cd65a891) can help on your journey.
 
 The key elements which are provided include:
 
@@ -181,7 +181,7 @@ The main files you will familiarize yourself with are:
 
 ## Data Architecture
 
-* The data return from [NewsAPI](https://catalogue.data.gov.bc.ca/dataset/bc-gov-news-api-service/resource/3692fd5e-87e2-47ab-8eee-9131ea249436) consists of  key-value pairs in JSON format.
+* The data returned from [NewsAPI](https://catalogue.data.gov.bc.ca/dataset/bc-gov-news-api-service/resource/3692fd5e-87e2-47ab-8eee-9131ea249436) consists of key-value pairs in JSON format.
 
 * The data **after* converting JSON format in [FetchLatestNews.js](https://github.com/bcgov/CITZ-IMB-Capstone2020/blob/master/src/views/FetchLatestNews.js) (line:30 ) is a string array
 
