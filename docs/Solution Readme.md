@@ -43,7 +43,7 @@ During the summer of 2020 working with a developer team from Camosun College we 
 
 
 ## Best Practices
-1.	**12 Factor:** This solution conforms to the principles of cloud-ready solution development and follows the twelve factors approach. We describe how we conform in this article.
+1.	**12 Factor:** This solution conforms to the principles of cloud-ready solution development and follows the twelve factors approach. We describe how we conform in [this article](https://github.com/bcgov/CITZ-IMB-Capstone2020/blob/master/docs/TwelveFactor.md).
 
 2.	**STRA:** contact the [Ministry Information Security Officer](https://intranet.gov.bc.ca/thehub/ocio/ocio-enterprise-services/information-security-branch/miso-contacts) (MISO) for security advice and guidance for your project.  
 
