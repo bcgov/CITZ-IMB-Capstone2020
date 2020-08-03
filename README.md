@@ -9,7 +9,7 @@ OCIO-ES-IMB is the Ministry of Citizen’s Services Information Management Branc
 - Engaging with Ministry Business Units to support their IM/IT project initiatives
 - Providing IM/IT Application Management Services including support and operational maintenance for over 80 applications on behalf of CITZ Ministry Business Units 
 - Providing STRA and PIA services for the Ministry
-- Providing Ifrastructure Management Services for Ministry clients
+- Providing Infrastructure Management Services for Ministry clients
 - Operating the IMB Support Desk
 - Reporting to the Ministry CIO (MCIO)
 
