@@ -39,7 +39,7 @@ During the summer of 2020 working with a developer team from Camosun College we 
     This 'starter kit' was developed as a playbook "exemplar". We developed on the BC DevExchange OpenShift container platform and follow community best practices including adherence to the 12-factor approach.
 
     It is recommended that you take the time to investigate and understand serviceworkers. We used the code described by Gert Gluckman in this [article](https://medium.com/better-programming/let-users-know-when-you-have-updated-your-service-worker-in-create-react-app-b0c2701995b3?_branch_match_id=675824666082506600). 
-    You can find his come at this [link](https://github.com/gglukmann/cra-sw).
+    You can find his code at this [link](https://github.com/gglukmann/cra-sw).
 
 
 ## Best Practices
