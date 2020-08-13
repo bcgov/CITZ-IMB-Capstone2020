@@ -112,9 +112,9 @@ During the summer of 2020 working with a developer team from Camosun College we 
 
 # Solution Architecture
 
-The 'PWA starter kit' is based upon the create-react-app solution from Facebook developed using react.js. This ‘start-kit’ provides product owners with a foundation to develop mobile applications. 
+The 'PWA starter kit' is based upon the create-react-app solution from Facebook developed using react.js. This ‘starter-kit’ provides product owners with a foundation to develop mobile applications. 
 
-By using the start-kit you are inheriting architectural decisions. You should review and adapt the architecture to meet your unique needs [This article](https://blog.usejournal.com/architecting-your-react-application-5af9cd65a891) can help on your journey.
+By using the starter-kit you are inheriting architectural decisions. You should review and adapt the architecture to meet your unique needs [This article](https://blog.usejournal.com/architecting-your-react-application-5af9cd65a891) can help on your journey.
 
 The key elements which are provided include:
 
