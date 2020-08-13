@@ -132,7 +132,7 @@ The key elements which are provided include:
 
 ## App Start: 
 
-* The following sequence diagrams are intended to assist you as navigate through our code.
+* The following sequence diagrams are intended to assist as you navigate through our code.
 
 * In the 'App Start' sequence Capstone2020 is the solution landing page  the user navigates to either from a URL or by starting their installed mobile PWA.
 
